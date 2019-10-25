@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public Text txtScore;
     public Text txtLevel;
     public Text nameText;
+    public ScoreManagement scoreUp;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,18 @@ public class Player : MonoBehaviour
     void Update()
     {
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        EnemyTriangle enemyTriangle = collision.GetComponent<EnemyTriangle>();
+        if (enemyTriangle != null)
+        {
+            enemyTriangle.killEnemyTriangle();
+            scoreUp.scoreUpdate(1);
+        } else {
+            Destroy(collision.gameObject);
+        }
     }
 
     public void Saver()
