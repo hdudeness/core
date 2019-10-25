@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnergyCore : MonoBehaviour
 {
+    public ScoreManagement score;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,15 @@ public class EnergyCore : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        EnemyTriangle enemyTriangle = collision.GetComponent<EnemyTriangle>();
+        if(enemyTriangle != null)
+        {
+            enemyTriangle.killEnemyTriangle();
+            score.scoreUpdate(1);
+        }
     }
 }

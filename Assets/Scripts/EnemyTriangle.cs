@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyTriangle : MonoBehaviour
 {
@@ -39,8 +40,12 @@ public class EnemyTriangle : MonoBehaviour
         health -= damgePerBullet;
         if(health <= 0)
         {
-            Destroy(gameObject);
+            killEnemyTriangle();
         }
     }
 
+    public void killEnemyTriangle()
+    {
+        Destroy(gameObject);
+    }
 }
