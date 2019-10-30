@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnergyCore : MonoBehaviour
+public class Shield : MonoBehaviour
 {
     public ScoreManagement score;
+    public float angle;
+    public float angleChange;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +20,25 @@ public class EnergyCore : MonoBehaviour
         
     }
 
+    public void RotateLeft()
+    {
+        angle += angleChange;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
+    public void RotateRight()
+    {
+        angle -= angleChange;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         EnemyTriangle enemyTriangle = collision.GetComponent<EnemyTriangle>();
-        if(enemyTriangle != null)
+        if (enemyTriangle != null)
         {
             enemyTriangle.killEnemyTriangle();
-            score.scoreUpdate(0);
+            score.scoreUpdate(1);
         }
     }
 }
