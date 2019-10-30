@@ -8,6 +8,10 @@ public class Shield : MonoBehaviour
     public float angle;
     public float angleChange;
 
+    public Transform bulletSpawnPoint;
+
+    public Bullet bulletPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,5 +44,10 @@ public class Shield : MonoBehaviour
             enemyTriangle.killEnemyTriangle();
             score.scoreUpdate(1);
         }
+    }
+
+    public void FireBullet()
+    {
+        Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.Euler(0, 0, angle-45));
     }
 }
