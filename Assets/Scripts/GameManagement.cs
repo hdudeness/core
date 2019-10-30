@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class GameManagement : MonoBehaviour
 {
     public string playerName;
     public int level;
@@ -11,7 +12,9 @@ public class Player : MonoBehaviour
     public Text txtScore;
     public Text txtLevel;
     public Text nameText;
-    public ScoreManagement scoreUp;
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,17 +27,12 @@ public class Player : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void scoreUpdate(int points)
     {
-        EnemyTriangle enemyTriangle = collision.GetComponent<EnemyTriangle>();
-        if (enemyTriangle != null)
-        {
-            enemyTriangle.killEnemyTriangle();
-            scoreUp.scoreUpdate(1);
-        } else {
-            Destroy(collision.gameObject);
-        }
+        score += points;
+        txtScore.text = Convert.ToString(score);
     }
+
 
     public void Saver()
     {
@@ -49,9 +47,9 @@ public class Player : MonoBehaviour
         PlayerData data = SaveSystem.Loader();
         playerName = data.playerName;
         level = data.level;
-        score = data.asset;
-        nameText.text = playerName;
+        score = data.score;
+        //nameText.text = playerName;
         txtScore.text = score.ToString();
-        txtLevel.text = level.ToString();
+        //txtLevel.text = level.ToString();
     }
 }

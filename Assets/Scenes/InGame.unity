@@ -842,7 +842,7 @@ GameObject:
   - component: {fileID: 634199705}
   - component: {fileID: 634199704}
   m_Layer: 0
-  m_Name: ScoreManagement
+  m_Name: GameManagement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -857,10 +857,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 634199703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe2e2803ab8478541ac8b9b7876312bc, type: 3}
+  m_Script: {fileID: 11500000, guid: a8721f509f9c7c5428f20967be9902c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: 
+  level: 0
+  score: 0
   txtScore: {fileID: 1460618090}
+  txtLevel: {fileID: 0}
+  nameText: {fileID: 0}
 --- !u!4 &634199705
 Transform:
   m_ObjectHideFlags: 0
@@ -1247,6 +1252,7 @@ MonoBehaviour:
     type: 3}
   energyCore: {fileID: 853612556}
   enemyPosition: {fileID: 853823221}
+  spawnTime: 1
 --- !u!4 &853823221
 Transform:
   m_ObjectHideFlags: 0

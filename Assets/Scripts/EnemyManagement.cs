@@ -8,6 +8,7 @@ public class EnemyManagement : MonoBehaviour
     public EnemyTriangle enemyTriangle;
     public EnergyCore energyCore;
     public Transform enemyPosition;
+    public int spawnTime;
 
     private System.Random rand = new System.Random();
 
@@ -15,8 +16,8 @@ public class EnemyManagement : MonoBehaviour
     {
         while (true)
         {
-            int direction = rand.Next(1, 3);
-            yield return new WaitForSeconds(1);
+            int direction = rand.Next(1, 3);    //Enemy will be spawned in the left or the right of the screen
+            yield return new WaitForSeconds(spawnTime);
 
             if(direction == 1)
             {
@@ -43,5 +44,6 @@ public class EnemyManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
     }
 }
