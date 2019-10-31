@@ -12,6 +12,11 @@ public class GameManagement : MonoBehaviour
     public Text txtScore;
     public Text txtLevel;
     public Text nameText;
+    public Text timeDisplay;
+    public float timer;
+    public float minutes;
+    public float seconds;
+    private int secondsBetweenLevels = 20;
     
 
 
@@ -24,8 +29,15 @@ public class GameManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        timer += Time.deltaTime;
+        level = (int)(timer / secondsBetweenLevels) + 1;
+        txtLevel.text = level.ToString();
+        minutes = timer / 60;
+        seconds = timer % 60;
+        timeDisplay.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+        
     }
+
 
     public void scoreUpdate(int points)
     {

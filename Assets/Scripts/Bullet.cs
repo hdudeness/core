@@ -37,5 +37,13 @@ public class Bullet : MonoBehaviour
         {
             enemyTriangle.BulletHit();
         }
+
+        EnemyOctagonPurple enemyOctagonPurple = collision.GetComponent<EnemyOctagonPurple>();
+        if (enemyOctagonPurple != null)
+        {
+            enemyOctagonPurple.BulletHit();
+        }
+
+        Destroy(gameObject);
     }
 }

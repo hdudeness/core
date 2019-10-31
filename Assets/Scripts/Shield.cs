@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-    public ScoreManagement score;
+    public GameManagement gameData;
     public float angle;
     public float angleChange;
 
@@ -42,7 +42,7 @@ public class Shield : MonoBehaviour
         if (enemyTriangle != null)
         {
             enemyTriangle.killEnemyTriangle();
-            score.scoreUpdate(1);
+            gameData.scoreUpdate(1);
         }
     }
 
