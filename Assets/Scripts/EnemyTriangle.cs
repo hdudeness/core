@@ -42,6 +42,7 @@ public class EnemyTriangle : MonoBehaviour
 
     public void BulletHit()
     {
+        // TODO: Later pull damage from source
         health -= damgePerBullet;
         if(health <= 0)
         {

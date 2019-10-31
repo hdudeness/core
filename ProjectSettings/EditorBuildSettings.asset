@@ -23,13 +23,13 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SetScreen.unity
     guid: dce7eb57a8196b8478fce7bfe7d27f40
   - enabled: 1
     path: Assets/Scenes/Shop Screen.unity
     guid: 8ab15cad3d1f8d1479c45d1131abb7e6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/WinScreen.unity
     guid: 592e41bdade452b43be7564969950ea1
   m_configObjects: {}
