@@ -23,7 +23,7 @@ public class EnergyCore : MonoBehaviour
         if(enemyTriangle != null)
         {
             enemyTriangle.killEnemyTriangle();
-            score.scoreUpdate(1);
+            score.scoreUpdate(0);
         }
     }
 }
