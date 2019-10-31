@@ -8,13 +8,13 @@ public class PlayerData
 {
     public string playerName;
     public int level;
-    public int asset;
+    public int score;
 
-    public PlayerData(Player player)
+    public PlayerData(GameManagement gameData)
     {
-        playerName = player.playerName;
-        level = player.level;
-        asset = player.score;
+        playerName = gameData.playerName;
+        level = gameData.level;
+        score = gameData.score;
     }
     
 }

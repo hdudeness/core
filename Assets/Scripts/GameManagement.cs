@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class GameManagement : MonoBehaviour
 {
     public string playerName;
     public int level;
@@ -11,7 +12,14 @@ public class Player : MonoBehaviour
     public Text txtScore;
     public Text txtLevel;
     public Text nameText;
-    public ScoreManagement scoreUp;
+    public Text timeDisplay;
+    public float timer;
+    public float minutes;
+    public float seconds;
+    private int secondsBetweenLevels = 20;
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,20 +29,22 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        timer += Time.deltaTime;
+        level = (int)(timer / secondsBetweenLevels) + 1;
+        txtLevel.text = level.ToString();
+        minutes = timer / 60;
+        seconds = timer % 60;
+        timeDisplay.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+        
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    public void scoreUpdate(int points)
     {
-        EnemyTriangle enemyTriangle = collision.GetComponent<EnemyTriangle>();
-        if (enemyTriangle != null)
-        {
-            enemyTriangle.killEnemyTriangle();
-            scoreUp.scoreUpdate(1);
-        } else {
-            Destroy(collision.gameObject);
-        }
+        score += points;
+        txtScore.text = Convert.ToString(score);
     }
+
 
     public void Saver()
     {
@@ -49,9 +59,9 @@ public class Player : MonoBehaviour
         PlayerData data = SaveSystem.Loader();
         playerName = data.playerName;
         level = data.level;
-        score = data.asset;
-        nameText.text = playerName;
+        score = data.score;
+        //nameText.text = playerName;
         txtScore.text = score.ToString();
-        txtLevel.text = level.ToString();
+        //txtLevel.text = level.ToString();
     }
 }

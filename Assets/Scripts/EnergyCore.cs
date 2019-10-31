@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnergyCore : MonoBehaviour
 {
-    public ScoreManagement score;
+    public GameManagement score;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +19,19 @@ public class EnergyCore : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        EnemyTriangle enemyTriangle = collision.GetComponent<EnemyTriangle>();
-        if(enemyTriangle != null)
+        if (collision.gameObject.name == "EnemyTriangle(Clone)")
         {
-            enemyTriangle.killEnemyTriangle();
-            score.scoreUpdate(0);
+            score.scoreUpdate(1);
+            Destroy(collision.gameObject);
+            return;
         }
+
+
+        if (collision.gameObject.name == "EnemyOctagonPurple(Clone)")
+        {
+            score.scoreUpdate(2);
+            Destroy(collision.gameObject);
+        }
+
     }
 }

@@ -177,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingPosition: {x: -5, y: 5, z: 0}
   endingPosition: {x: -5, y: 5, z: 0}
-  travelTime: 15
+  speed: 0.5
   health: 9
   damgePerBullet: 3
   healthBar: {fileID: 3272960849909222515}
