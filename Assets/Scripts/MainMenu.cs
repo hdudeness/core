@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void playGame()
     {
-        SceneManager.LoadScene("InGame");   //Load PlayScreen scene in the scene index
+        SceneManager.LoadScene("InGame");
     }
 
     public void loadGame()
