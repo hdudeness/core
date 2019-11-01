@@ -25,7 +25,7 @@ public class EnergyCore : MonoBehaviour
         {
             score.scoreUpdate(1);
             Destroy(collision.gameObject);
-            health.updateCoreHealth(20); // In the future pull damage from enemy type. 
+            health.updateCoreHealth(5); // In the future pull damage from enemy type. 
             return;                      // For now just leave it defined here.
         }
 
@@ -34,7 +34,7 @@ public class EnergyCore : MonoBehaviour
         {
             score.scoreUpdate(2);
             Destroy(collision.gameObject);
-            health.updateCoreHealth(50);
+            health.updateCoreHealth(20);
         }
 
     }
