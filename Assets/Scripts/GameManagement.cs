@@ -42,7 +42,11 @@ public class GameManagement : MonoBehaviour
     public void scoreUpdate(int points)
     {
         score += points;
-        txtScore.text = Convert.ToString(score);
+        if (txtScore != null)
+        {
+            txtScore.text = Convert.ToString(score);
+        }
+        
     }
 
 
