@@ -11,7 +11,7 @@ public class EnemyOctagonPurple : MonoBehaviour
     private double distance;
     private float travelTime;
     public int health;
-    public int damgePerBullet;
+    public int pointValue;
     public SpriteRenderer healthBar;
     private float maxHealth;
     float timeSinceSpawn = 0;
@@ -37,13 +37,13 @@ public class EnemyOctagonPurple : MonoBehaviour
     }
 
 
-    public void BulletHit()
+    public void Hit(int damage)
     {
-        health -= damgePerBullet;
+        health -= damage;
         if (health <= 0)
         {
             killEnemy();
-            score.scoreUpdate(2);
+            score.scoreUpdate(pointValue);
         }
     }
 

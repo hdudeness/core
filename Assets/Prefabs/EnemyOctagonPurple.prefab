@@ -252,9 +252,10 @@ MonoBehaviour:
   startingPosition: {x: 0, y: 0, z: 0}
   endingPosition: {x: 0, y: 0, z: 0}
   speed: 0.2
-  health: 6
-  damgePerBullet: 1
+  health: 15
+  pointValue: 2
   healthBar: {fileID: 3937682717249658082}
+  score: {fileID: 0}
 --- !u!1 &7255684384638545736
 GameObject:
   m_ObjectHideFlags: 0

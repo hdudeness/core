@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed;
+    public int damage;
 
     // Start is called before the first frame update
     void Start()
@@ -36,13 +37,13 @@ public class Bullet : MonoBehaviour
         EnemyTriangle enemyTriangle = collision.GetComponent<EnemyTriangle>();
         if (enemyTriangle != null)
         {
-            enemyTriangle.BulletHit();
+            enemyTriangle.Hit(damage);
         }
 
         EnemyOctagonPurple enemyOctagonPurple = collision.GetComponent<EnemyOctagonPurple>();
         if (enemyOctagonPurple != null)
         {
-            enemyOctagonPurple.BulletHit();
+            enemyOctagonPurple.Hit(damage);
         }
 
         Destroy(gameObject);

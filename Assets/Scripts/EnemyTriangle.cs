@@ -12,7 +12,8 @@ public class EnemyTriangle : MonoBehaviour
     private double distance;
     private float travelTime;
     public int health;
-    public int damgePerBullet;
+    public int damage;
+    public int pointValue;
     public SpriteRenderer healthBar;
     private float maxHealth;
     float timeSinceSpawn = 0;
@@ -42,14 +43,13 @@ public class EnemyTriangle : MonoBehaviour
         
     }
 
-    public void BulletHit()
+    public void Hit(int damage)
     {
-        // TODO: Later pull damage from source
-        health -= damgePerBullet;
+        health -= damage;
         if(health <= 0)
         {
             killEnemyTriangle();
-            score.scoreUpdate(1);
+            score.scoreUpdate(pointValue);
         }
     }
 
