@@ -966,6 +966,7 @@ MonoBehaviour:
   playerName: 
   level: 0
   score: 0
+  health: {fileID: 1930702848}
   name1: 
   highestScore1: 0
   name2: 
@@ -1615,6 +1616,7 @@ GameObject:
   - component: {fileID: 947037416}
   - component: {fileID: 947037415}
   - component: {fileID: 947037414}
+  - component: {fileID: 947037417}
   m_Layer: 5
   m_Name: RotateRight
   m_TagString: Untagged
@@ -1684,18 +1686,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 947037415}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1424550344}
-        m_MethodName: RotateRight
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &947037415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1732,6 +1723,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947037412}
   m_CullTransparentMesh: 0
+--- !u!114 &947037417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947037412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0cda870616ac9545b07bdf97b1de45c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldControl: {fileID: 1424550344}
 --- !u!1 &1074534629
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,6 +2031,7 @@ GameObject:
   - component: {fileID: 1179977606}
   - component: {fileID: 1179977605}
   - component: {fileID: 1179977604}
+  - component: {fileID: 1179977607}
   m_Layer: 5
   m_Name: RotateLeft
   m_TagString: Untagged
@@ -2096,18 +2101,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1179977605}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1424550344}
-        m_MethodName: RotateLeft
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1179977605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2144,6 +2138,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1179977602}
   m_CullTransparentMesh: 0
+--- !u!114 &1179977607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179977602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a727a48c5db0448b394b7f87665d7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldControl: {fileID: 1424550344}
 --- !u!1 &1265144040
 GameObject:
   m_ObjectHideFlags: 0
@@ -2407,7 +2414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameData: {fileID: 634199704}
   angle: 0
-  angleChange: 10
+  angleChange: 5
   bulletSpawnPoint: {fileID: 1895680205}
   bulletPrefab: {fileID: 8831002681226001946, guid: 0322fe5cdbc497342971197c7caa5200,
     type: 3}
@@ -3142,6 +3149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e79d3d0f1e29240bdfc041bfa5ff1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coreHealth: 100
   txtHealth: {fileID: 39222191}
 --- !u!4 &1930702849
 Transform:

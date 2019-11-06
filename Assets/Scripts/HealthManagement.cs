@@ -13,7 +13,7 @@ public class HealthManagement : MonoBehaviour
      * entity (triangles have their value, core has its value, etc).
      */
 
-    private int coreHealth = 100;
+    public int coreHealth = 100;
     public Text txtHealth;
 
     // Method for changing core health. Positive values are damage, and

@@ -9,6 +9,8 @@ public class PlayerData
     public string playerName;
     //public int level;
     public int score;
+    public float timer;
+    public int health;
     public string name1;
     public int highestScore1;
     public string name2;
@@ -19,7 +21,7 @@ public class PlayerData
     public bool item2;
     public bool item3;
     public bool item4;
-    public float timer;
+    
 
 
     public PlayerData(GameManagement gameData)
@@ -28,6 +30,7 @@ public class PlayerData
         //level = gameData.level;
         score = gameData.score;
         timer = gameData.timer;
+        health = gameData.health.coreHealth;
         name1 = gameData.name1;
         highestScore1 = gameData.highestScore1;
         name2 = gameData.name2;

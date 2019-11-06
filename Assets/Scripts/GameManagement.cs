@@ -9,6 +9,7 @@ public class GameManagement : MonoBehaviour
     public string playerName;
     public int level;
     public int score;
+    public HealthManagement health;
     public string name1;
     public int highestScore1;
     public string name2;
@@ -38,7 +39,7 @@ public class GameManagement : MonoBehaviour
         }
         else
         {
-            playerName = MainMenu.playerName;
+            this.newGameLoader();
         }
     }
 
@@ -79,6 +80,25 @@ public class GameManagement : MonoBehaviour
         //level = data.level;
         score = data.score;
         timer = data.timer;
+        health.coreHealth = data.health;
+        name1 = data.name1;
+        highestScore1 = data.highestScore1;
+        name2 = data.name2;
+        highestScore2 = data.highestScore2;
+        name3 = data.name3;
+        highestScore3 = data.highestScore3;
+        item1 = data.item1;
+        item2 = data.item2;
+        item3 = data.item3;
+        item4 = data.item4;
+        //nameText.text = playerName;
+        txtScore.text = score.ToString();
+    }
+
+    public void newGameLoader()
+    {
+        PlayerData data = SaveSystem.Loader();
+        playerName = MainMenu.playerName;
         name1 = data.name1;
         highestScore1 = data.highestScore1;
         name2 = data.name2;

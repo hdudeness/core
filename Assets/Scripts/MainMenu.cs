@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     public void playGame()
     {
         playerName = GameObject.Find("InputFieldName").GetComponent<InputField>().text.ToString();
+        isLoaded = false;
         SceneManager.LoadScene("InGame");
     }
 
