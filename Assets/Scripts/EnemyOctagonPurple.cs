@@ -15,10 +15,12 @@ public class EnemyOctagonPurple : MonoBehaviour
     public SpriteRenderer healthBar;
     private float maxHealth;
     float timeSinceSpawn = 0;
+    public GameManagement score;
 
     // Start is called before the first frame update
     void Start()
     {
+        score = GameObject.Find("GameManagement").GetComponent<GameManagement>();
         maxHealth = health;
         startingPosition = transform.position;
         distance = Math.Sqrt(transform.position.x * transform.position.x + transform.position.y * transform.position.y);
@@ -41,6 +43,7 @@ public class EnemyOctagonPurple : MonoBehaviour
         if (health <= 0)
         {
             killEnemy();
+            score.scoreUpdate(2);
         }
     }
 
