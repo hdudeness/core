@@ -36,6 +36,10 @@ public class GameManagement : MonoBehaviour
         {
             this.Loader();
         }
+        else
+        {
+            playerName = MainMenu.playerName;
+        }
     }
 
     // Update is called once per frame
@@ -64,6 +68,7 @@ public class GameManagement : MonoBehaviour
 
     public void Saver()
     {
+        playerDataUpdate();
         SaveSystem.Saver(this);
     }
 
@@ -88,4 +93,28 @@ public class GameManagement : MonoBehaviour
         txtScore.text = score.ToString();
     }
 
+    private void playerDataUpdate()
+    {
+        if(score > highestScore1)
+        {
+            name3 = name2;
+            highestScore3 = highestScore2;
+            name2 = name1;
+            highestScore2 = highestScore1;
+            name1 = playerName;
+            highestScore1 = score;
+        }
+        else if(score > highestScore2)
+        {
+            name3 = name2;
+            highestScore3 = highestScore2;
+            name2 = playerName;
+            highestScore2 = score;
+        }
+        else if(score > highestScore3)
+        {
+            name3 = playerName;
+            highestScore3 = score;
+        }
+    }
 }

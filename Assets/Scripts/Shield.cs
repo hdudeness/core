@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Shield : MonoBehaviour
 {
     public GameManagement gameData;
@@ -11,6 +12,7 @@ public class Shield : MonoBehaviour
     public Transform bulletSpawnPoint;
 
     public Bullet bulletPrefab;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -50,4 +52,7 @@ public class Shield : MonoBehaviour
     {
         Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.Euler(0, 0, angle-45));
     }
+
+    
+
 }

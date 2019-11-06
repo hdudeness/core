@@ -1244,6 +1244,7 @@ GameObject:
   - component: {fileID: 708195834}
   - component: {fileID: 708195833}
   - component: {fileID: 708195832}
+  - component: {fileID: 708195835}
   m_Layer: 5
   m_Name: ScoreBoard
   m_TagString: Untagged
@@ -1343,6 +1344,24 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &708195835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708195830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f865011b3e87be0499f5238f864b45ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtP1Name: {fileID: 2084321324}
+  txtP1Score: {fileID: 681267755}
+  txtP2Name: {fileID: 1291749245}
+  txtP2Score: {fileID: 787094293}
+  txtP3Name: {fileID: 639499757}
+  txtP3Score: {fileID: 131563027}
 --- !u!1 &781688722
 GameObject:
   m_ObjectHideFlags: 0
@@ -2775,7 +2794,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter name to start a new game...
+  m_Text: Enter name here...
 --- !u!222 &1825842888
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3042,7 +3061,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
