@@ -21,8 +21,7 @@ public class EnemyManagement : MonoBehaviour
         {
             int direction = rand.Next(1, 3);    //Enemy will be spawned in the left or the right of the screen
             yield return new WaitForSeconds(spawnTime);
-
-            if(direction == 1)
+            if(direction == 1) 
             {
                 EnemyTriangle newEnemy = Instantiate(enemyTriangle, new Vector3(10, rand.Next(0, 7), 0), Quaternion.identity);
                 newEnemy.endingPosition = energyCore.transform.position;
