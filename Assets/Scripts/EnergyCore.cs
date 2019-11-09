@@ -7,10 +7,14 @@ public class EnergyCore : MonoBehaviour
 {
     public HealthManagement health;
     public GameManagement score;
+    public AudioClip hitSound;
+    public AudioSource hitSource;
+    public EnemyManagement enemyManagement;
     // Start is called before the first frame update
     void Start()
     {
-        
+        hitSource = GetComponent<AudioSource>();
+        enemyManagement = GameObject.Find("EnemyManagement").GetComponent<EnemyManagement>();
     }
 
     // Update is called once per frame
@@ -23,18 +27,19 @@ public class EnergyCore : MonoBehaviour
     {
         if (collision.gameObject.name == "EnemyTriangle(Clone)")
         {
+            hitSource.Play();
             score.scoreUpdate(1);
             Destroy(collision.gameObject);
-            health.updateCoreHealth(5); // In the future pull damage from enemy type. 
-            return;                      // For now just leave it defined here.
+            health.updateCoreHealth(5);
+            enemyManagement.enemyCount--;
         }
-
-
-        if (collision.gameObject.name == "EnemyOctagonPurple(Clone)")
+        else if (collision.gameObject.name == "EnemyOctagonPurple(Clone)")
         {
+            hitSource.Play();
             score.scoreUpdate(2);
             Destroy(collision.gameObject);
             health.updateCoreHealth(20);
+            enemyManagement.enemyCount--;
         }
 
     }
