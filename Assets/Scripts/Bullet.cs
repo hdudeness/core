@@ -34,18 +34,21 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Shield shield = collision.GetComponent<Shield>();
+        //if () ;
+
         EnemyTriangle enemyTriangle = collision.GetComponent<EnemyTriangle>();
         if (enemyTriangle != null)
         {
             enemyTriangle.Hit(damage);
+            Destroy(gameObject);
         }
 
         EnemyOctagonPurple enemyOctagonPurple = collision.GetComponent<EnemyOctagonPurple>();
         if (enemyOctagonPurple != null)
         {
             enemyOctagonPurple.Hit(damage);
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
     }
 }

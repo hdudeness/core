@@ -50,7 +50,7 @@ public class Shield : MonoBehaviour
 
     public void FireBullet()
     {
-        Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.Euler(0, 0, angle-45));
+        Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.Euler(0, 0, angle));
     }
 
     
