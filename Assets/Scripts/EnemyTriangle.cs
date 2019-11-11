@@ -33,7 +33,7 @@ public class EnemyTriangle : MonoBehaviour
     void Update()
     {
         healthBar.size = new Vector2(26 * (health / maxHealth), healthBar.size.y);
-        timeSinceSpawn += Time.fixedDeltaTime;
+        timeSinceSpawn += Time.deltaTime;
         transform.position = Vector3.Lerp(startingPosition, endingPosition, timeSinceSpawn / travelTime);
         
     }

@@ -17,6 +17,21 @@ public class EnemyOctagonPurple : MonoBehaviour
     float timeSinceSpawn = 0;
     public GameManagement score;
 
+    public Transform bulletSpawn;
+    public EnemyBullet enemyBulletPrefab;
+    public int fireSpeed;
+
+    IEnumerator EnemyFire()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(fireSpeed);
+
+            EnemyBullet enemyBullet = Instantiate(enemyBulletPrefab, bulletSpawn.position, Quaternion.identity);
+            enemyBullet.endingPosition = endingPosition;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,13 +40,14 @@ public class EnemyOctagonPurple : MonoBehaviour
         startingPosition = transform.position;
         distance = Math.Sqrt(transform.position.x * transform.position.x + transform.position.y * transform.position.y);
         travelTime = (float)distance / speed;
+        StartCoroutine(EnemyFire());
     }
 
     // Update is called once per frame
     void Update()
     {
         healthBar.size = new Vector2(5 * (health / maxHealth), healthBar.size.y);
-        timeSinceSpawn += Time.fixedDeltaTime;
+        timeSinceSpawn += Time.deltaTime;
         transform.position = Vector3.Lerp(startingPosition, endingPosition, timeSinceSpawn / travelTime);
 
     }
