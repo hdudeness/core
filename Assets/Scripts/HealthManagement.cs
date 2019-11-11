@@ -15,17 +15,21 @@ public class HealthManagement : MonoBehaviour
 
     public int coreHealth = 100;
     public Text txtHealth;
+    public bool godMode = false;
 
     // Method for changing core health. Positive values are damage, and
     // negative values are healing.
     public void updateCoreHealth(int dmg)
     {
-        coreHealth -= dmg;
-        txtHealth.text = Convert.ToString(coreHealth) + "%";
-        if (coreHealth <= 0)
+        if (!godMode)
         {
-            SceneManager.LoadScene("LoseScreen");
-        } 
+            coreHealth -= dmg;
+            txtHealth.text = Convert.ToString(coreHealth) + "%";
+            if (coreHealth <= 0)
+            {
+                SceneManager.LoadScene("LoseScreen");
+            }
+        }
     }
 
     // Start is called before the first frame update
