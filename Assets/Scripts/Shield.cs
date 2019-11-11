@@ -8,6 +8,7 @@ public class Shield : MonoBehaviour
     public GameManagement gameData;
     public float angle;
     public float angleChange;
+    public EnemyManagement enemyManagement;
 
     public Transform bulletSpawnPoint;
 
@@ -17,7 +18,7 @@ public class Shield : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemyManagement = GameObject.Find("EnemyManagement").GetComponent<EnemyManagement>();
     }
 
     // Update is called once per frame
@@ -44,7 +45,36 @@ public class Shield : MonoBehaviour
         if (enemyTriangle != null)
         {
             enemyTriangle.killEnemyTriangle();
-            gameData.scoreUpdate(1);
+            gameData.scoreUpdate(enemyTriangle.pointValue);
+            enemyManagement.enemyTriangleCount--;
+            return;
+        }
+
+        EnemyOctagonPurple enemyOxtagonPurple = collision.GetComponent<EnemyOctagonPurple>();
+        if (enemyOxtagonPurple != null)
+        {
+            gameData.scoreUpdate(enemyOxtagonPurple.pointValue);
+            Destroy(collision.gameObject);
+            enemyManagement.enemyOctagonPurpleCount--;
+            return;
+        }
+
+        EnemyHeartPink enemyHeartPink = collision.GetComponent<EnemyHeartPink>();
+        if (enemyHeartPink != null)
+        {
+            gameData.scoreUpdate(enemyHeartPink.pointValue);
+            Destroy(collision.gameObject);
+            enemyManagement.enemyHeartPinkCount--;
+            return;
+        }
+
+        EnemyCircleMaroon enemyCircleMaroon = collision.GetComponent<EnemyCircleMaroon>();
+        if (enemyCircleMaroon != null)
+        {
+            gameData.scoreUpdate(enemyCircleMaroon.pointValue);
+            Destroy(collision.gameObject);
+            enemyManagement.enemyCircleMaroonCount--;
+            return;
         }
     }
 

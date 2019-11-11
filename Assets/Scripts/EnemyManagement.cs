@@ -16,8 +16,14 @@ public class EnemyManagement : MonoBehaviour
     private Boolean isEnemyOctagonPurpleSpawned = false;
     private bool isEnemyHeartPinkSpawned = false;
     private bool isEnemyCircleMaroonSpawned = false;
-    public int enemyCount = 0; // Make private after testing
-    public int enemyLimit = 30;
+    public int enemyTriangleCount = 0; // Make private after testing
+    public int enemyTriangleLimit = 30;
+    public int enemyOctagonPurpleCount = 0;
+    public int enemyOctagonPurpleLimit = 20;
+    public int enemyHeartPinkCount = 0;
+    public int enemyHeartPinkLimit = 15;
+    public int enemyCircleMaroonCount = 0;
+    public int enemyCircleMaroonLimit = 10;
 
     private System.Random rand = new System.Random();
 
@@ -27,19 +33,18 @@ public class EnemyManagement : MonoBehaviour
         {
             int direction = rand.Next(1, 3);    //Enemy will be spawned in the left or the right of the screen
             yield return new WaitForSeconds(spawnTime);
-            if (direction == 1 && enemyCount < enemyLimit)
+            if (direction == 1 && enemyTriangleCount < enemyTriangleLimit)
             {
                 EnemyTriangle newEnemy = Instantiate(enemyTriangle, new Vector3(10, rand.Next(0, 7), 0), Quaternion.identity);
                 newEnemy.endingPosition = energyCore.transform.position;
-                enemyCount++;
+                enemyTriangleCount++;
             }
-            else if (enemyCount < enemyLimit)
+            else if (enemyTriangleCount < enemyTriangleLimit)
             {
                 EnemyTriangle newEnemy = Instantiate(enemyTriangle, new Vector3(-10, rand.Next(0, 7), 0), Quaternion.identity);
                 newEnemy.endingPosition = energyCore.transform.position;
-                enemyCount++;
+                enemyTriangleCount++;
             }
-            Debug.Log(enemyCount);
         }
     }
 
@@ -47,21 +52,22 @@ public class EnemyManagement : MonoBehaviour
     {
         while (true)
         {
-            int direction = rand.Next(1, 3);    //Enemy will be spawned in the left or the right of the screen
+            
             yield return new WaitForSeconds(spawnTime);
-            if (enemyCount < enemyLimit)
+            if (enemyOctagonPurpleCount < enemyOctagonPurpleLimit)
             {
+                int direction = rand.Next(1, 3);    //Enemy will be spawned in the left or the right of the screen
                 if (direction == 1)
                 {
                     EnemyOctagonPurple newEnemy = Instantiate(enemyOctagonPurple, new Vector3(10, rand.Next(0, 7), 0), Quaternion.identity);
                     newEnemy.endingPosition = energyCore.transform.position;
-                    enemyCount++;
+                    enemyOctagonPurpleCount++;
                 }
                 else
                 {
                     EnemyOctagonPurple newEnemy = Instantiate(enemyOctagonPurple, new Vector3(-10, rand.Next(0, 7), 0), Quaternion.identity);
                     newEnemy.endingPosition = energyCore.transform.position;
-                    enemyCount++;
+                    enemyOctagonPurpleCount++;
                 }
             }
         }
@@ -73,7 +79,7 @@ public class EnemyManagement : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(spawnTime);
-            if (enemyCount < enemyLimit)
+            if (enemyHeartPinkCount < enemyHeartPinkLimit)
             {
                 int direction = rand.Next(1, 3);    //Enemy will be spawned in the left or the right of the screen
 
@@ -82,13 +88,13 @@ public class EnemyManagement : MonoBehaviour
                 {
                     EnemyHeartPink newEnemy = Instantiate(enemyHeartPink, new Vector3(10, rand.Next(0, 7), 0), Quaternion.identity);
                     newEnemy.endingPosition = energyCore.transform.position;
-                    enemyCount++;
+                    enemyHeartPinkCount++;
                 }
                 else
                 {
                     EnemyHeartPink newEnemy = Instantiate(enemyHeartPink, new Vector3(-10, rand.Next(0, 7), 0), Quaternion.identity);
                     newEnemy.endingPosition = energyCore.transform.position;
-                    enemyCount++;
+                    enemyHeartPinkCount++;
                 }
             }
         }
@@ -99,7 +105,7 @@ public class EnemyManagement : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(spawnTime);
-            if (enemyCount < enemyLimit)
+            if (enemyCircleMaroonCount < enemyCircleMaroonLimit)
             {
                 int direction = rand.Next(1, 3);    //Enemy will be spawned in the left or the right of the screen
 
@@ -108,13 +114,13 @@ public class EnemyManagement : MonoBehaviour
                 {
                     EnemyCircleMaroon newEnemy = Instantiate(enemyCircleMaroon, new Vector3(10, rand.Next(0, 7), 0), Quaternion.identity);
                     newEnemy.endingPosition = energyCore.transform.position;
-                    enemyCount++;
+                    enemyCircleMaroonCount++;
                 }
                 else
                 {
                     EnemyCircleMaroon newEnemy = Instantiate(enemyCircleMaroon, new Vector3(-10, rand.Next(0, 7), 0), Quaternion.identity);
                     newEnemy.endingPosition = energyCore.transform.position;
-                    enemyCount++;
+                    enemyCircleMaroonCount++;
                 }
             }
         }
@@ -132,18 +138,24 @@ public class EnemyManagement : MonoBehaviour
     {
         if (gameData.level >= 2 && !isEnemyOctagonPurpleSpawned)
         {
+            enemyTriangleLimit = 25;
             StartCoroutine(EnemyOctagonPurpleProducer());
             isEnemyOctagonPurpleSpawned = true;
         }
 
         if (gameData.level >= 3 && !isEnemyHeartPinkSpawned)
         {
+            enemyTriangleLimit = 20;
+            enemyOctagonPurpleLimit = 10;
             StartCoroutine(EnemyHeartPinkProducer());
             isEnemyHeartPinkSpawned = true;
         }
 
         if (gameData.level >= 4 && !isEnemyCircleMaroonSpawned)
         {
+            enemyTriangleLimit = 15;
+            enemyOctagonPurpleLimit = 10;
+            enemyHeartPinkLimit = 10;
             StartCoroutine(EnemyCircleMaroonProducer());
             isEnemyCircleMaroonSpawned = true;
         }

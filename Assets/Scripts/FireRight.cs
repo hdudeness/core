@@ -19,14 +19,14 @@ public class FireRight : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         if (isPressed)
         {
-            if (timeSinceLastShot > 0 && timeSinceLastShot < 0.2)
+            if (timeSinceLastShot > 0 && timeSinceLastShot < 0.4)
             {
-                timeSinceLastShot += Time.deltaTime;
+            timeSinceLastShot += Time.deltaTime;
             }
             else
             {
-                shieldControl.FireBullet();
-                timeSinceLastShot = 0.1f;
+            shieldControl.FireBullet();
+            timeSinceLastShot = 0.1f;
             }
 
         }

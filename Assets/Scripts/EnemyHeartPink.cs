@@ -33,7 +33,7 @@ public class EnemyHeartPink : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthBar.size = new Vector2(26 * (health / maxHealth), healthBar.size.y);
+        healthBar.size = new Vector2(6 * (health / maxHealth), healthBar.size.y);
         timeSinceSpawn += Time.deltaTime;
         transform.position = Vector3.Lerp(startingPosition, endingPosition, timeSinceSpawn / travelTime);
 
@@ -52,7 +52,6 @@ public class EnemyHeartPink : MonoBehaviour
 
     public void killEnemy()
     {
-        enemyManagement.enemyCount--;
         Destroy(gameObject);
     }
 }

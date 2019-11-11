@@ -51,7 +51,6 @@ public class EnemyOctagonPurple : MonoBehaviour
 
     public void killEnemy()
     {
-        enemyManagement.enemyCount--;
         Destroy(gameObject);
     }
 }

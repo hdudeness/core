@@ -31,7 +31,7 @@ public class EnergyCore : MonoBehaviour
             score.scoreUpdate(1);
             Destroy(collision.gameObject);
             health.updateCoreHealth(5);
-            enemyManagement.enemyCount--;
+            enemyManagement.enemyTriangleCount--;
         }
         else if (collision.gameObject.name == "EnemyOctagonPurple(Clone)")
         {
@@ -39,7 +39,7 @@ public class EnergyCore : MonoBehaviour
             score.scoreUpdate(2);
             Destroy(collision.gameObject);
             health.updateCoreHealth(20);
-            enemyManagement.enemyCount--;
+            enemyManagement.enemyOctagonPurpleCount--;
         }
         else if (collision.gameObject.name == "EnemyHeartPink(Clone)")
         {
@@ -47,7 +47,7 @@ public class EnergyCore : MonoBehaviour
             score.scoreUpdate(3);
             Destroy(collision.gameObject);
             health.updateCoreHealth(20);
-            enemyManagement.enemyCount--;
+            enemyManagement.enemyHeartPinkCount--;
         }
         else if (collision.gameObject.name == "EnemyCircleMaroon(Clone)")
         {
@@ -56,7 +56,7 @@ public class EnergyCore : MonoBehaviour
             score.scoreUpdate(enemy.pointValue);
             Destroy(collision.gameObject);
             health.updateCoreHealth(25);
-            enemyManagement.enemyCount--;
+            enemyManagement.enemyCircleMaroonCount--;
         }
 
     }

@@ -57,7 +57,6 @@ public class EnemyTriangle : MonoBehaviour
 
     public void killEnemyTriangle()
     {
-        enemyManagement.enemyCount--;
         Destroy(gameObject);
     }
 }

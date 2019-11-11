@@ -44,7 +44,7 @@ public class Bullet : MonoBehaviour
         {
             enemyTriangle.Hit(damage);
             Destroy(gameObject);
-            enemyManagement.enemyCount--;
+            enemyManagement.enemyTriangleCount--;
             return;
         }
 
@@ -53,7 +53,7 @@ public class Bullet : MonoBehaviour
         {
             enemyOctagonPurple.Hit(damage);
             Destroy(gameObject);
-            enemyManagement.enemyCount--;
+            enemyManagement.enemyOctagonPurpleCount--;
             return;
         }
 
@@ -62,7 +62,7 @@ public class Bullet : MonoBehaviour
         {
             enemyHeartPink.Hit(damage);
             Destroy(gameObject);
-            enemyManagement.enemyCount--;
+            enemyManagement.enemyHeartPinkCount--;
             return;
         }
 
@@ -71,7 +71,7 @@ public class Bullet : MonoBehaviour
         {
             enemyCircleMaroon.Hit(damage);
             Destroy(gameObject);
-            enemyManagement.enemyCount--;
+            enemyManagement.enemyCircleMaroonCount--;
             return;
         }
     }
