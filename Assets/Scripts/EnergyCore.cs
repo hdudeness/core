@@ -41,6 +41,14 @@ public class EnergyCore : MonoBehaviour
             health.updateCoreHealth(20);
             enemyManagement.enemyCount--;
         }
+        else if (collision.gameObject.name == "EnemyHeartPink(Clone)")
+        {
+            hitSource.Play();
+            score.scoreUpdate(3);
+            Destroy(collision.gameObject);
+            health.updateCoreHealth(20);
+            enemyManagement.enemyCount--;
+        }
 
     }
 }

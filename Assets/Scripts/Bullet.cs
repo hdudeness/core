@@ -50,5 +50,12 @@ public class Bullet : MonoBehaviour
             enemyOctagonPurple.Hit(damage);
             Destroy(gameObject);
         }
+
+        EnemyHeartPink enemyHeartPink = collision.GetComponent<EnemyHeartPink>();
+        if (enemyHeartPink != null)
+        {
+            enemyHeartPink.Hit(damage);
+            Destroy(gameObject);
+        }
     }
 }
