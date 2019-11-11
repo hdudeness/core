@@ -6,12 +6,14 @@ public class Bullet : MonoBehaviour
 {
     public float speed;
     public int damage;
+    public EnemyManagement enemyManagement;
 
     // Start is called before the first frame update
     void Start()
     {
         
         StartCoroutine(DestroyAfterTime());
+        enemyManagement = GameObject.Find("EnemyManagement").GetComponent<EnemyManagement>();
     }
 
     IEnumerator DestroyAfterTime()
@@ -42,6 +44,8 @@ public class Bullet : MonoBehaviour
         {
             enemyTriangle.Hit(damage);
             Destroy(gameObject);
+            enemyManagement.enemyCount--;
+            return;
         }
 
         EnemyOctagonPurple enemyOctagonPurple = collision.GetComponent<EnemyOctagonPurple>();
@@ -49,6 +53,8 @@ public class Bullet : MonoBehaviour
         {
             enemyOctagonPurple.Hit(damage);
             Destroy(gameObject);
+            enemyManagement.enemyCount--;
+            return;
         }
 
         EnemyHeartPink enemyHeartPink = collision.GetComponent<EnemyHeartPink>();
@@ -56,6 +62,17 @@ public class Bullet : MonoBehaviour
         {
             enemyHeartPink.Hit(damage);
             Destroy(gameObject);
+            enemyManagement.enemyCount--;
+            return;
+        }
+
+        EnemyCircleMaroon enemyCircleMaroon = collision.GetComponent<EnemyCircleMaroon>();
+        if (enemyCircleMaroon != null)
+        {
+            enemyCircleMaroon.Hit(damage);
+            Destroy(gameObject);
+            enemyManagement.enemyCount--;
+            return;
         }
     }
 }
