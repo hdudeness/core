@@ -19,7 +19,6 @@ public class FireLeft : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         if (isPressed)
         {
-            Debug.Log(timeSinceLastShot);
             if(timeSinceLastShot > 0 && timeSinceLastShot < 0.2)
             {
                 timeSinceLastShot += Time.deltaTime;
