@@ -16,6 +16,7 @@ public class EnemyOctagonPurple : MonoBehaviour
     private float maxHealth;
     float timeSinceSpawn = 0;
     public GameManagement score;
+    public EnemyManagement enemyManagement;
 
     public Transform bulletSpawn;
     public EnemyBullet enemyBulletPrefab;
@@ -36,6 +37,7 @@ public class EnemyOctagonPurple : MonoBehaviour
     void Start()
     {
         score = GameObject.Find("GameManagement").GetComponent<GameManagement>();
+        enemyManagement = GameObject.Find("EnemyManagement").GetComponent<EnemyManagement>();
         maxHealth = health;
         startingPosition = transform.position;
         distance = Math.Sqrt(transform.position.x * transform.position.x + transform.position.y * transform.position.y);
@@ -65,6 +67,7 @@ public class EnemyOctagonPurple : MonoBehaviour
 
     public void killEnemy()
     {
+        enemyManagement.enemyCount--;
         Destroy(gameObject);
     }
 }

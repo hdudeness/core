@@ -38,14 +38,15 @@ public class ScoreManagementTests
     public void EnemyHealthLoweredWhenBulletHitsEnemy_Test()
     {
         // Temporarily commented out because of code refactoring
-        /*
+        
         // Arrange
         var enemyTriangle = new EnemyTriangle();
+        var bullet = new Bullet();
         enemyTriangle.health = 4; //original health of enemy
-        enemyTriangle.damgePerBullet = 2;   //damage per bullet
+        bullet.damage = 2; //damage dealt per bullet
 
         //Act
-        enemyTriangle.BulletHit();
+        enemyTriangle.Hit(bullet.damage); 
 
         // Assert
         //the health of enemy is expected to be deducted by 1 when hit by a bullet
@@ -54,15 +55,14 @@ public class ScoreManagementTests
         //Arrange
         var enemyOctagon = new EnemyOctagonPurple();
         enemyOctagon.health = 5;
-        enemyOctagon.damgePerBullet = 1;
 
         //Act
-        enemyOctagon.BulletHit();
+        enemyOctagon.Hit(bullet.damage);
 
         // Assert
         //the health of enemy is expected to be deducted by 1 when hit by a bullet
-        Assert.True(enemyOctagon.health == 4);
-        */
+        Assert.True(enemyOctagon.health == 3);
+        
     }
 
     [Test]

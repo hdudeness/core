@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     public void playGame()
     {
         playerName = GameObject.Find("InputFieldName").GetComponent<InputField>().text.ToString();
+        PauseResume.isPaused = false;
         isLoaded = false;
         SceneManager.LoadScene("InGame");
     }
@@ -23,6 +24,7 @@ public class MainMenu : MonoBehaviour
 
     public void loadGame()
     {
+        PauseResume.isPaused = false;
         isLoaded = true;
         SceneManager.LoadScene("InGame");
     }

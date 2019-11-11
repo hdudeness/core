@@ -18,11 +18,13 @@ public class EnemyTriangle : MonoBehaviour
     private float maxHealth;
     float timeSinceSpawn = 0;
     public GameManagement score;
+    public EnemyManagement enemyManagement;
 
     // Start is called before the first frame update
     void Start()
     {
         score = GameObject.Find("GameManagement").GetComponent<GameManagement>();
+        enemyManagement = GameObject.Find("EnemyManagement").GetComponent<EnemyManagement>();
         maxHealth = health;
         startingPosition = transform.position;
         distance = Math.Sqrt(transform.position.x* transform.position.x + transform.position.y* transform.position.y);
@@ -55,6 +57,7 @@ public class EnemyTriangle : MonoBehaviour
 
     public void killEnemyTriangle()
     {
+        enemyManagement.enemyCount--;
         Destroy(gameObject);
     }
 }
