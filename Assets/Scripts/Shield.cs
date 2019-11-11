@@ -76,6 +76,19 @@ public class Shield : MonoBehaviour
             enemyManagement.enemyCircleMaroonCount--;
             return;
         }
+
+        EnemyOctagonPurple enemyOctagonPurple = collision.GetComponent<EnemyOctagonPurple>();
+        if (enemyOctagonPurple != null)
+        {
+            enemyOctagonPurple.killEnemy();
+            gameData.scoreUpdate(2);
+        }
+
+        EnemyBullet enemyBullet = collision.GetComponent<EnemyBullet>();
+        if (enemyBullet != null)
+        {
+            enemyBullet.DestroyBullet();
+        }
     }
 
     public void FireBullet()

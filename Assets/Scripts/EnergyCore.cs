@@ -59,5 +59,12 @@ public class EnergyCore : MonoBehaviour
             enemyManagement.enemyCircleMaroonCount--;
         }
 
+        EnemyBullet enemyBullet = collision.GetComponent<EnemyBullet>();
+        if (enemyBullet != null)
+        {
+            health.updateCoreHealth(5);
+            enemyBullet.DestroyBullet();
+        }
+
     }
 }
