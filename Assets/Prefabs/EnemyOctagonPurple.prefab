@@ -287,6 +287,8 @@ MonoBehaviour:
   pointValue: 2
   healthBar: {fileID: 3937682717249658082}
   score: {fileID: 0}
+  enemyManagement: {fileID: 0}
+  explosion: {fileID: 8300000, guid: 3495ff9f530360a41b88bdefc93415af, type: 3}
   bulletSpawn: {fileID: 3058432389183875145}
   enemyBulletPrefab: {fileID: 5056533178147443321, guid: 144bd6808f557174589259302f81944e,
     type: 3}

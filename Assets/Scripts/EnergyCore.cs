@@ -62,6 +62,7 @@ public class EnergyCore : MonoBehaviour
         EnemyBullet enemyBullet = collision.GetComponent<EnemyBullet>();
         if (enemyBullet != null)
         {
+            hitSource.Play();
             health.updateCoreHealth(5);
             enemyBullet.DestroyBullet();
         }

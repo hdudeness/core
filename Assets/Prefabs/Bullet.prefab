@@ -97,6 +97,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 5
+  enemyManagement: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: 1c58c7f7749b57040b9ca8ab09f7d514, type: 3}
+  shootSound: {fileID: 8300000, guid: 639c0f1ec1d400f43ae6a0a300007873, type: 3}
 --- !u!58 &4123058271630139435
 CircleCollider2D:
   m_ObjectHideFlags: 0

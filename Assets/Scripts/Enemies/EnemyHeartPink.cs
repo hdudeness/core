@@ -18,6 +18,7 @@ public class EnemyHeartPink : MonoBehaviour
     float timeSinceSpawn = 0;
     public GameManagement score;
     public EnemyManagement enemyManagement;
+    public AudioClip explosion;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +53,7 @@ public class EnemyHeartPink : MonoBehaviour
 
     public void killEnemy()
     {
+        AudioSource.PlayClipAtPoint(explosion, new Vector3(0, 0, -10));
         Destroy(gameObject);
     }
 }

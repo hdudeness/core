@@ -7,11 +7,13 @@ public class Bullet : MonoBehaviour
     public float speed;
     public int damage;
     public EnemyManagement enemyManagement;
+    public AudioClip hitSound;
+    public AudioClip shootSound;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        AudioSource.PlayClipAtPoint(shootSound, new Vector3(0, 0, -5));
         StartCoroutine(DestroyAfterTime());
         enemyManagement = GameObject.Find("EnemyManagement").GetComponent<EnemyManagement>();
     }
@@ -37,11 +39,11 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Shield shield = collision.GetComponent<Shield>();
-        //if () ;
-
+        //if () 
         EnemyTriangle enemyTriangle = collision.GetComponent<EnemyTriangle>();
         if (enemyTriangle != null)
         {
+            AudioSource.PlayClipAtPoint(hitSound, new Vector3(0, 0, -5));
             enemyTriangle.Hit(damage);
             Destroy(gameObject);
             enemyManagement.enemyTriangleCount--;
@@ -51,6 +53,7 @@ public class Bullet : MonoBehaviour
         EnemyOctagonPurple enemyOctagonPurple = collision.GetComponent<EnemyOctagonPurple>();
         if (enemyOctagonPurple != null)
         {
+            AudioSource.PlayClipAtPoint(hitSound, new Vector3(0, 0, -5));
             enemyOctagonPurple.Hit(damage);
             Destroy(gameObject);
             enemyManagement.enemyOctagonPurpleCount--;
@@ -60,6 +63,7 @@ public class Bullet : MonoBehaviour
         EnemyHeartPink enemyHeartPink = collision.GetComponent<EnemyHeartPink>();
         if (enemyHeartPink != null)
         {
+            AudioSource.PlayClipAtPoint(hitSound, new Vector3(0, 0, -5));
             enemyHeartPink.Hit(damage);
             Destroy(gameObject);
             enemyManagement.enemyHeartPinkCount--;
@@ -69,6 +73,7 @@ public class Bullet : MonoBehaviour
         EnemyCircleMaroon enemyCircleMaroon = collision.GetComponent<EnemyCircleMaroon>();
         if (enemyCircleMaroon != null)
         {
+            AudioSource.PlayClipAtPoint(hitSound, new Vector3(0, 0, -5));
             enemyCircleMaroon.Hit(damage);
             Destroy(gameObject);
             enemyManagement.enemyCircleMaroonCount--;

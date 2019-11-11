@@ -17,13 +17,13 @@ public class EnemyManagement : MonoBehaviour
     private bool isEnemyHeartPinkSpawned = false;
     private bool isEnemyCircleMaroonSpawned = false;
     public int enemyTriangleCount = 0; // Make private after testing
-    public int enemyTriangleLimit = 30;
+    public int enemyTriangleLimit = 20;
     public int enemyOctagonPurpleCount = 0;
-    public int enemyOctagonPurpleLimit = 20;
+    public int enemyOctagonPurpleLimit = 5;
     public int enemyHeartPinkCount = 0;
-    public int enemyHeartPinkLimit = 15;
+    public int enemyHeartPinkLimit = 5;
     public int enemyCircleMaroonCount = 0;
-    public int enemyCircleMaroonLimit = 10;
+    public int enemyCircleMaroonLimit = 2;
 
     private System.Random rand = new System.Random();
 
@@ -146,7 +146,7 @@ public class EnemyManagement : MonoBehaviour
         if (gameData.level >= 3 && !isEnemyHeartPinkSpawned)
         {
             enemyTriangleLimit = 20;
-            enemyOctagonPurpleLimit = 10;
+            enemyOctagonPurpleLimit = 5;
             StartCoroutine(EnemyHeartPinkProducer());
             isEnemyHeartPinkSpawned = true;
         }
@@ -154,8 +154,8 @@ public class EnemyManagement : MonoBehaviour
         if (gameData.level >= 4 && !isEnemyCircleMaroonSpawned)
         {
             enemyTriangleLimit = 15;
-            enemyOctagonPurpleLimit = 10;
-            enemyHeartPinkLimit = 10;
+            enemyOctagonPurpleLimit = 5;
+            enemyHeartPinkLimit = 3;
             StartCoroutine(EnemyCircleMaroonProducer());
             isEnemyCircleMaroonSpawned = true;
         }

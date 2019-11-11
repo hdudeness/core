@@ -184,6 +184,7 @@ MonoBehaviour:
   healthBar: {fileID: 573296460309626074}
   score: {fileID: 0}
   enemyManagement: {fileID: 0}
+  explosion: {fileID: 8300000, guid: 48e8c1d365e3fea4a8c53774c6f96a2e, type: 3}
 --- !u!60 &5972226807082999130
 PolygonCollider2D:
   m_ObjectHideFlags: 0

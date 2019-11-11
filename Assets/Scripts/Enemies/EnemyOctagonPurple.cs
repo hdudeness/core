@@ -2,9 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class EnemyTriangle : MonoBehaviour
+public class EnemyOctagonPurple : MonoBehaviour
 {
     public Vector3 startingPosition;
     public Vector3 endingPosition;
@@ -12,13 +11,28 @@ public class EnemyTriangle : MonoBehaviour
     private double distance;
     private float travelTime;
     public int health;
-    public int damage;
     public int pointValue;
     public SpriteRenderer healthBar;
     private float maxHealth;
     float timeSinceSpawn = 0;
     public GameManagement score;
     public EnemyManagement enemyManagement;
+    public AudioClip explosion;
+
+    public Transform bulletSpawn;
+    public EnemyBullet enemyBulletPrefab;
+    public int fireSpeed;
+
+    IEnumerator EnemyFire()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(fireSpeed);
+
+            EnemyBullet enemyBullet = Instantiate(enemyBulletPrefab, bulletSpawn.position, Quaternion.identity);
+            enemyBullet.endingPosition = endingPosition;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -27,36 +41,34 @@ public class EnemyTriangle : MonoBehaviour
         enemyManagement = GameObject.Find("EnemyManagement").GetComponent<EnemyManagement>();
         maxHealth = health;
         startingPosition = transform.position;
-        distance = Math.Sqrt(transform.position.x* transform.position.x + transform.position.y* transform.position.y);
+        distance = Math.Sqrt(transform.position.x * transform.position.x + transform.position.y * transform.position.y);
         travelTime = (float)distance / speed;
+        StartCoroutine(EnemyFire());
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthBar.size = new Vector2(26 * (health / maxHealth), healthBar.size.y);
+        healthBar.size = new Vector2(5 * (health / maxHealth), healthBar.size.y);
         timeSinceSpawn += Time.deltaTime;
         transform.position = Vector3.Lerp(startingPosition, endingPosition, timeSinceSpawn / travelTime);
-        
+
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-    }
 
     public void Hit(int damage)
     {
         health -= damage;
-        if(health <= 0)
+        if (health <= 0)
         {
-            killEnemyTriangle();
+            killEnemy();
             score.scoreUpdate(pointValue);
         }
     }
 
-    public void killEnemyTriangle()
+    public void killEnemy()
     {
+        AudioSource.PlayClipAtPoint(explosion, new Vector3(0, 0, -10));
         Destroy(gameObject);
     }
 }

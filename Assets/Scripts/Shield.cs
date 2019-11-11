@@ -50,20 +50,23 @@ public class Shield : MonoBehaviour
             return;
         }
 
+        //Oxtagon doesn't exist
+        /*
         EnemyOctagonPurple enemyOxtagonPurple = collision.GetComponent<EnemyOctagonPurple>();
         if (enemyOxtagonPurple != null)
         {
             gameData.scoreUpdate(enemyOxtagonPurple.pointValue);
-            Destroy(collision.gameObject);
+            enemyOxtagonPurple.killEnemyOxtagonPurple();
             enemyManagement.enemyOctagonPurpleCount--;
             return;
         }
+        */
 
         EnemyHeartPink enemyHeartPink = collision.GetComponent<EnemyHeartPink>();
         if (enemyHeartPink != null)
         {
             gameData.scoreUpdate(enemyHeartPink.pointValue);
-            Destroy(collision.gameObject);
+            enemyHeartPink.killEnemy();
             enemyManagement.enemyHeartPinkCount--;
             return;
         }
@@ -72,7 +75,7 @@ public class Shield : MonoBehaviour
         if (enemyCircleMaroon != null)
         {
             gameData.scoreUpdate(enemyCircleMaroon.pointValue);
-            Destroy(collision.gameObject);
+            enemyCircleMaroon.killEnemy();
             enemyManagement.enemyCircleMaroonCount--;
             return;
         }

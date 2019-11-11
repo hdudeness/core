@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyOctagonPurple : MonoBehaviour
+public class EnemyCircleMaroon : MonoBehaviour
 {
     public Vector3 startingPosition;
     public Vector3 endingPosition;
@@ -11,27 +11,14 @@ public class EnemyOctagonPurple : MonoBehaviour
     private double distance;
     private float travelTime;
     public int health;
+    public int damage;
     public int pointValue;
     public SpriteRenderer healthBar;
     private float maxHealth;
     float timeSinceSpawn = 0;
     public GameManagement score;
     public EnemyManagement enemyManagement;
-
-    public Transform bulletSpawn;
-    public EnemyBullet enemyBulletPrefab;
-    public int fireSpeed;
-
-    IEnumerator EnemyFire()
-    {
-        while(true)
-        {
-            yield return new WaitForSeconds(fireSpeed);
-
-            EnemyBullet enemyBullet = Instantiate(enemyBulletPrefab, bulletSpawn.position, Quaternion.identity);
-            enemyBullet.endingPosition = endingPosition;
-        }
-    }
+    public AudioClip explosion;
 
     // Start is called before the first frame update
     void Start()
@@ -42,13 +29,12 @@ public class EnemyOctagonPurple : MonoBehaviour
         startingPosition = transform.position;
         distance = Math.Sqrt(transform.position.x * transform.position.x + transform.position.y * transform.position.y);
         travelTime = (float)distance / speed;
-        StartCoroutine(EnemyFire());
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthBar.size = new Vector2(5 * (health / maxHealth), healthBar.size.y);
+        healthBar.size = new Vector2(6 * (health / maxHealth), healthBar.size.y);
         timeSinceSpawn += Time.deltaTime;
         transform.position = Vector3.Lerp(startingPosition, endingPosition, timeSinceSpawn / travelTime);
 
@@ -67,6 +53,7 @@ public class EnemyOctagonPurple : MonoBehaviour
 
     public void killEnemy()
     {
+        AudioSource.PlayClipAtPoint(explosion, new Vector3(0, 0, -10));
         Destroy(gameObject);
     }
 }
