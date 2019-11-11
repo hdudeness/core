@@ -20,7 +20,7 @@ public class HealthManagement : MonoBehaviour
     // negative values are healing.
     public void updateCoreHealth(int dmg)
     {
-        coreHealth -= dmg;
+        //coreHealth -= dmg;
         txtHealth.text = Convert.ToString(coreHealth) + "%";
         if (coreHealth <= 0)
         {

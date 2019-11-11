@@ -1790,6 +1790,8 @@ MonoBehaviour:
     type: 3}
   enemyHeartPink: {fileID: 6718054549380734232, guid: d1e245248aa0af348982bd3368156d67,
     type: 3}
+  enemyCircleMaroon: {fileID: 3359631184061322245, guid: cbaf0e02ecfd53b4e8c8b90991eb4839,
+    type: 3}
   energyCore: {fileID: 853612556}
   enemyPosition: {fileID: 853823221}
   spawnTime: 1

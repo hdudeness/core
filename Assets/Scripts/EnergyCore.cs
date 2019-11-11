@@ -49,6 +49,15 @@ public class EnergyCore : MonoBehaviour
             health.updateCoreHealth(20);
             enemyManagement.enemyCount--;
         }
+        else if (collision.gameObject.name == "EnemyCircleMaroon(Clone)")
+        {
+            hitSource.Play();
+            EnemyCircleMaroon enemy = collision.GetComponent<EnemyCircleMaroon>();
+            score.scoreUpdate(enemy.pointValue);
+            Destroy(collision.gameObject);
+            health.updateCoreHealth(25);
+            enemyManagement.enemyCount--;
+        }
 
     }
 }
