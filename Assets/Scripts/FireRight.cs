@@ -17,14 +17,18 @@ public class FireRight : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     // Update is called once per frame
     void Update()
     {
-        if (timeSinceLastShot > 0 && timeSinceLastShot < 0.2)
+        if (isPressed)
         {
-            timeSinceLastShot += Time.deltaTime;
-        }
-        else
-        {
-            shieldControl.FireBullet();
-            timeSinceLastShot = 0.1f;
+            if (timeSinceLastShot > 0 && timeSinceLastShot < 0.2)
+            {
+                timeSinceLastShot += Time.deltaTime;
+            }
+            else
+            {
+                shieldControl.FireBullet();
+                timeSinceLastShot = 0.1f;
+            }
+
         }
     }
 
