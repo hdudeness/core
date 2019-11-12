@@ -74,4 +74,54 @@ public class ScoreManagementTests
 
         // Assert
     }
+
+    [Test]
+    public void HitTriangleTest1()
+    {
+        // Arrange
+        var enemyTriangle = new EnemyTriangle();
+        var bullet = new Bullet();
+        enemyTriangle.health = 5;
+        bullet.damage = 1;
+
+        
+
+        // Act
+        enemyTriangle.Hit(bullet.damage);
+
+        // Assert
+        Assert.True(enemyTriangle.health == 4);
+    }
+
+    [Test]
+    public void HitTriangleTest2()
+    {
+        // Arrange
+        var enemyTriangle = new EnemyTriangle();
+        var bullet = new Bullet();
+        enemyTriangle.health = 5;
+        bullet.damage = 2;
+        
+        // Act
+        enemyTriangle.Hit(bullet.damage);
+
+        // Assert
+        Assert.True(enemyTriangle.health == 3);
+    }
+
+    [Test]
+    public void DestroyTriangleTest1()
+    {
+        // Arrange
+        var enemyTriangle = new EnemyTriangle();
+        var bullet = new Bullet();
+        enemyTriangle.health = 1;
+        bullet.damage = 1;
+
+        // Act
+        enemyTriangle.Hit(bullet.damage);
+
+        // Assert
+        UnityEngine.Assertions.Assert.IsNull(enemyTriangle);
+    }
 }
