@@ -45,6 +45,10 @@ public class PlayerData
         item2 = gameData.item2;
         item3 = gameData.item3;
         item4 = gameData.item4;
+        item5 = gameData.item5;
+        item6 = gameData.item6;
+        item7 = gameData.item7;
+        item8 = gameData.item8;
     }
     
 }

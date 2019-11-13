@@ -26,12 +26,12 @@ public class GameManagement : MonoBehaviour
     public int item8;
     public Text txtScore;
     public Text txtLevel;
-    public Text nameText;
+    //public Text nameText;
     public Text timeDisplay;
     public float timer;
     public float minutes;
     public float seconds;
-    private int secondsBetweenLevels = 20;
+    private int secondsBetweenLevels = 30;
     //public static bool isLoaded = false;
     // Start is called before the first frame update
 
@@ -95,6 +95,10 @@ public class GameManagement : MonoBehaviour
         item2 = data.item2;
         item3 = data.item3;
         item4 = data.item4;
+        item5 = data.item5;
+        item6 = data.item6;
+        item7 = data.item7;
+        item8 = data.item8;
         //nameText.text = playerName;
         txtScore.text = score.ToString();
     }
@@ -109,12 +113,6 @@ public class GameManagement : MonoBehaviour
         highestScore2 = data.highestScore2;
         name3 = data.name3;
         highestScore3 = data.highestScore3;
-        item1 = data.item1;
-        item2 = data.item2;
-        item3 = data.item3;
-        item4 = data.item4;
-        //nameText.text = playerName;
-        txtScore.text = score.ToString();
     }
 
     private void playerDataUpdate()

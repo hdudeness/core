@@ -16,6 +16,7 @@ public class HealthManagement : MonoBehaviour
     public int coreHealth = 100;
     public Text txtHealth;
     public bool godMode = false;
+    public GameManagement gameManagement;
 
     // Method for changing core health. Positive values are damage, and
     // negative values are healing.
@@ -33,7 +34,9 @@ public class HealthManagement : MonoBehaviour
             }
             if (coreHealth <= 0)
             {
+
                 SceneManager.LoadScene("LoseScreen");
+                gameManagement.Saver();
             }
 
         }
