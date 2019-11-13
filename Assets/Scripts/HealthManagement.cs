@@ -27,11 +27,15 @@ public class HealthManagement : MonoBehaviour
         if (!godMode)
         {
             coreHealth -= dmg;
-            txtHealth.text = Convert.ToString(coreHealth) + "%";
-            if (coreHealth <= 0)
+            if(txtHealth != null)
             {
-                SceneManager.LoadScene("LoseScreen");
+                txtHealth.text = Convert.ToString(coreHealth) + "%";
+                if (coreHealth <= 0)
+                {
+                    SceneManager.LoadScene("LoseScreen");
+                }
             }
+            
         }
     }
 
