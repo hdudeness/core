@@ -16,10 +16,14 @@ public class GameManagement : MonoBehaviour
     public int highestScore2;
     public string name3;
     public int highestScore3;
-    public bool item1;
-    public bool item2;
-    public bool item3;
-    public bool item4;
+    public int item1;
+    public int item2;
+    public int item3;
+    public int item4;
+    public int item5;
+    public int item6;
+    public int item7;
+    public int item8;
     public Text txtScore;
     public Text txtLevel;
     public Text nameText;
