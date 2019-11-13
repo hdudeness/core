@@ -30,12 +30,12 @@ public class HealthManagement : MonoBehaviour
             if(txtHealth != null)
             {
                 txtHealth.text = Convert.ToString(coreHealth) + "%";
-                if (coreHealth <= 0)
-                {
-                    SceneManager.LoadScene("LoseScreen");
-                }
             }
-            
+            if (coreHealth <= 0)
+            {
+                SceneManager.LoadScene("LoseScreen");
+            }
+
         }
     }
 
