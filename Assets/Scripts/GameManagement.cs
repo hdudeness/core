@@ -16,14 +16,7 @@ public class GameManagement : MonoBehaviour
     public int highestScore2;
     public string name3;
     public int highestScore3;
-    public int item1;
-    public int item2;
-    public int item3;
-    public int item4;
-    public int item5;
-    public int item6;
-    public int item7;
-    public int item8;
+    public int[] items = new int[8];
     public Text txtScore;
     public Text txtLevel;
     //public Text nameText;
@@ -91,14 +84,7 @@ public class GameManagement : MonoBehaviour
         highestScore2 = data.highestScore2;
         name3 = data.name3;
         highestScore3 = data.highestScore3;
-        item1 = data.item1;
-        item2 = data.item2;
-        item3 = data.item3;
-        item4 = data.item4;
-        item5 = data.item5;
-        item6 = data.item6;
-        item7 = data.item7;
-        item8 = data.item8;
+        Array.Copy(data.items, 0, items, 0, 8);
         //nameText.text = playerName;
         txtScore.text = score.ToString();
     }
