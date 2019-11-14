@@ -157,5 +157,105 @@ public class ScoreManagementTests
         Assert.True(enemyTriangle.health == 3);
     }
 
+    [Test]
+    public void HitOctagonTest1()
+    {
+        // Arrange
+        var enemy = new EnemyOctagonPurple();
+        var bullet = new Bullet();
+        enemy.health = 5;
+        bullet.damage = 1;
 
+
+
+        // Act
+        enemy.Hit(bullet.damage);
+
+        // Assert
+        Assert.True(enemy.health == 4);
+    }
+
+    [Test]
+    public void HitOctagonTest2()
+    {
+        // Arrange
+        var enemy = new EnemyOctagonPurple();
+        var bullet = new Bullet();
+        enemy.health = 5;
+        bullet.damage = 2;
+
+        // Act
+        enemy.Hit(bullet.damage);
+
+        // Assert
+        Assert.True(enemy.health == 3);
+    }
+
+    [Test]
+    public void HitCircleTest1()
+    {
+        // Arrange
+        var enemy = new EnemyCircleMaroon();
+        var bullet = new Bullet();
+        enemy.health = 5;
+        bullet.damage = 1;
+
+
+
+        // Act
+        enemy.Hit(bullet.damage);
+
+        // Assert
+        Assert.True(enemy.health == 4);
+    }
+
+    [Test]
+    public void HitCircleTest2()
+    {
+        // Arrange
+        var enemy = new EnemyCircleMaroon();
+        var bullet = new Bullet();
+        enemy.health = 5;
+        bullet.damage = 2;
+
+        // Act
+        enemy.Hit(bullet.damage);
+
+        // Assert
+        Assert.True(enemy.health == 3);
+    }
+
+    [Test]
+    public void HitHeartTest1()
+    {
+        // Arrange
+        var enemy = new EnemyHeartPink();
+        var bullet = new Bullet();
+        enemy.health = 5;
+        bullet.damage = 1;
+
+
+
+        // Act
+        enemy.Hit(bullet.damage);
+
+        // Assert
+        Assert.True(enemy.health == 4);
+    }
+
+    [Test]
+    public void HitHeartTest2()
+    {
+        // Arrange
+        var enemy = new EnemyHeartPink();
+        var bullet = new Bullet();
+        enemy.health = 5;
+        bullet.damage = 2;
+
+        // Act
+        enemy.Hit(bullet.damage);
+
+        // Assert
+        Assert.True(enemy.health == 3);
+    }
 }
