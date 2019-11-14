@@ -122,17 +122,6 @@ public class ScoreManagementTests
         //Health of core is expected to be decreased by damage
         Assert.That(healthManagement.coreHealth, Is.EqualTo(originalHealth - damage));
     }
-        
-
-    [Test]
-    public void ShieldCollisionKillsEnemy_Test()
-    {
-        // Arrange
-
-        // Act
-
-        // Assert
-    }
 
     [Test]
     public void HitTriangleTest1()
@@ -166,22 +155,6 @@ public class ScoreManagementTests
 
         // Assert
         Assert.True(enemyTriangle.health == 3);
-    }
-
-    [Test]
-    public void DestroyTriangleTest1()
-    {
-        // Arrange
-        var enemyTriangle = new EnemyTriangle();
-        var bullet = new Bullet();
-        enemyTriangle.health = 1;
-        bullet.damage = 1;
-
-        // Act
-        //enemyTriangle.Hit(bullet.damage);
-
-        // Assert
-        //UnityEngine.Assertions.Assert.IsNull(enemyTriangle);
     }
 
 
