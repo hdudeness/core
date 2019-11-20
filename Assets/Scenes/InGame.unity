@@ -1790,7 +1790,7 @@ MonoBehaviour:
     type: 3}
   energyCore: {fileID: 853612556}
   enemyPosition: {fileID: 853823221}
-  spawnTime: 1
+  spawnTime: 2
   gameData: {fileID: 634199704}
   enemyTriangleCount: 0
   enemyTriangleLimit: 30
@@ -3472,7 +3472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coreHealth: 100
   txtHealth: {fileID: 484335963}
-  godMode: 0
+  godMode: 1
   gameManagement: {fileID: 634199704}
 --- !u!4 &1930702849
 Transform:
