@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 5972226807082999130}
   m_Layer: 0
   m_Name: EnemyHeartPink
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,6 +185,7 @@ MonoBehaviour:
   score: {fileID: 0}
   enemyManagement: {fileID: 0}
   explosion: {fileID: 8300000, guid: 48e8c1d365e3fea4a8c53774c6f96a2e, type: 3}
+  movementTime: 20
 --- !u!60 &5972226807082999130
 PolygonCollider2D:
   m_ObjectHideFlags: 0

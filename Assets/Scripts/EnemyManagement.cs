@@ -16,7 +16,7 @@ public class EnemyManagement : MonoBehaviour
     private Boolean isEnemyOctagonPurpleSpawned = false;
     private bool isEnemyHeartPinkSpawned = false;
     private bool isEnemyCircleMaroonSpawned = false;
-    public int enemyTriangleCount = 0; // Make private after testing
+    public int enemyTriangleCount = 0; 
     public int enemyTriangleLimit = 20;
     public int enemyOctagonPurpleCount = 0;
     public int enemyOctagonPurpleLimit = 5;

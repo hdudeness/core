@@ -31,4 +31,9 @@ public class EnemyBullet : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public void UpdateSpeed(float factor)
+    {
+        speed = speed * factor;
+    }
 }

@@ -61,4 +61,9 @@ public class EnemyTriangle : MonoBehaviour
         AudioSource.PlayClipAtPoint(explosion, new Vector3(0, 0, -10));
         Destroy(gameObject);
     }
+
+    public void UpdateSpeed(float factor)
+    {
+        speed = speed * factor;
+    }
 }
