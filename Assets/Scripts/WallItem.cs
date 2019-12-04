@@ -21,7 +21,7 @@ public class WallItem : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.SendMessage("UpdateSpeed", 2)
+            collision.gameObject.SendMessage("UpdateSpeed", 2);
         }
     }
 
