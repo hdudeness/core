@@ -19,6 +19,7 @@ public class EnemyCircleMaroon : MonoBehaviour
     public GameManagement score;
     public EnemyManagement enemyManagement;
     public AudioClip explosion;
+    public float movementTime = 20;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,11 @@ public class EnemyCircleMaroon : MonoBehaviour
         healthBar.size = new Vector2(6 * (health / maxHealth), healthBar.size.y);
         timeSinceSpawn += Time.deltaTime;
         transform.position = Vector3.Lerp(startingPosition, endingPosition, timeSinceSpawn / travelTime);
+
+        float normalTime = Time.fixedTime / movementTime;
+        float sineTime = normalTime * Mathf.PI * 2;
+        float sinVal = Mathf.Sin(sineTime);
+        transform.position = new Vector3(transform.position.x, sinVal*3);
 
     }
 
