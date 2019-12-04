@@ -23,6 +23,12 @@ public class EnemyOctagonPurple : MonoBehaviour
     public EnemyBullet enemyBulletPrefab;
     public int fireSpeed;
 
+    //Used for moving around the core
+    private float rotateSpeed = .1f;
+    private float Radius = 15f;
+    private Vector2 center;
+    private float angle;
+
     IEnumerator EnemyFire()
     {
         while(true)
@@ -37,6 +43,8 @@ public class EnemyOctagonPurple : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        angle = transform.position.y;
+        center = new Vector2(0f, 0f);
         score = GameObject.Find("GameManagement").GetComponent<GameManagement>();
         enemyManagement = GameObject.Find("EnemyManagement").GetComponent<EnemyManagement>();
         maxHealth = health;
@@ -51,7 +59,14 @@ public class EnemyOctagonPurple : MonoBehaviour
     {
         healthBar.size = new Vector2(5 * (health / maxHealth), healthBar.size.y);
         timeSinceSpawn += Time.deltaTime;
-        transform.position = Vector3.Lerp(startingPosition, endingPosition, timeSinceSpawn / travelTime);
+        angle += rotateSpeed * Time.deltaTime;
+        var offset = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * Radius;
+        transform.position = center + offset;
+        if(Radius > 4)
+        {
+            Radius -= 0.01f;
+        }
+       
 
     }
 
