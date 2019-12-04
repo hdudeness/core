@@ -10,6 +10,11 @@ public class Items : MonoBehaviour
     public void healthRestore() {
         health.updateCoreHealth(-10);
     }
+
+    public void wall()
+    {
+        // Spawn an instance of the wall prefab.
+    }
     
     public void supernova()
     {
