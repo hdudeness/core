@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoadScreen.unity
     guid: 5e4d1c26f5fb78c499802aefab2d7758
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LoseScreen.unity
     guid: f922ab010d50b98478e3173eff058f3f
   - enabled: 1
@@ -24,12 +24,12 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/SetScreen.unity
-    guid: dce7eb57a8196b8478fce7bfe7d27f40
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Shop Screen.unity
     guid: 8ab15cad3d1f8d1479c45d1131abb7e6
   - enabled: 0
-    path: Assets/Scenes/WinScreen.unity
-    guid: 592e41bdade452b43be7564969950ea1
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

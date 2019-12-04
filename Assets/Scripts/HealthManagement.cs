@@ -35,7 +35,7 @@ public class HealthManagement : MonoBehaviour
             if (coreHealth <= 0)
             {
 
-                SceneManager.LoadScene("LoseScreen");
+                SceneManager.LoadScene("LoseScene");
                 gameManagement.Saver();
             }
 
