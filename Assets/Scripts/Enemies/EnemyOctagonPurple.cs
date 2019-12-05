@@ -14,7 +14,6 @@ public class EnemyOctagonPurple : MonoBehaviour
     public int pointValue;
     public SpriteRenderer healthBar;
     private float maxHealth;
-    float timeSinceSpawn = 0;
     public GameManagement score;
     public EnemyManagement enemyManagement;
     public AudioClip explosion;
@@ -58,7 +57,6 @@ public class EnemyOctagonPurple : MonoBehaviour
     void Update()
     {
         healthBar.size = new Vector2(5 * (health / maxHealth), healthBar.size.y);
-        timeSinceSpawn += Time.deltaTime;
         angle += rotateSpeed * Time.deltaTime;
         var offset = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * Radius;
         transform.position = center + offset;

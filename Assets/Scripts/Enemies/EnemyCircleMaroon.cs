@@ -39,8 +39,8 @@ public class EnemyCircleMaroon : MonoBehaviour
         timeSinceSpawn += Time.deltaTime;
         transform.position = Vector3.Lerp(startingPosition, endingPosition, timeSinceSpawn / travelTime);
 
-        float normalTime = Time.fixedTime / movementTime;
-        float sineTime = normalTime * Mathf.PI * 2;
+        float normalTime = timeSinceSpawn / movementTime;
+        float sineTime = normalTime * Mathf.PI * 6;
         float sinVal = Mathf.Sin(sineTime);
         transform.position = new Vector3(transform.position.x, sinVal*3);
 

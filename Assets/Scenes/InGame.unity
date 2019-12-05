@@ -3411,7 +3411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coreHealth: 100
   txtHealth: {fileID: 484335963}
-  godMode: 0
+  godMode: 1
   gameManagement: {fileID: 634199704}
 --- !u!4 &1930702849
 Transform:
