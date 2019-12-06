@@ -6,14 +6,22 @@ public class Items : MonoBehaviour
 {
     public HealthManagement health;
     public Supernova nova;
+    public WallItem wallItem;
 
     public void healthRestore() {
         health.updateCoreHealth(-10);
     }
 
+    // Takes x, y, and angle coords from touch input
     public void wall()
     {
-        // Spawn an instance of the wall prefab.
+        WallItem newWall = Instantiate(wallItem, new Vector3(3f, 0f, 0), Quaternion.identity);
+    }
+
+    // Takes x, y coords from touch input
+    public void mine()
+    {
+
     }
     
     public void supernova()

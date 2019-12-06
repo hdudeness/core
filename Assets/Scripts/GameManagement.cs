@@ -93,6 +93,10 @@ public class GameManagement : MonoBehaviour
     {
         PlayerData data = SaveSystem.Loader();
         playerName = MainMenu.playerName;
+        if (playerName == null)
+        {
+            playerName = "Unnamed";
+        }
         name1 = data.name1;
         highestScore1 = data.highestScore1;
         name2 = data.name2;
