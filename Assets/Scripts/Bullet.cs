@@ -46,7 +46,6 @@ public class Bullet : MonoBehaviour
             AudioSource.PlayClipAtPoint(hitSound, new Vector3(0, 0, -5));
             enemyTriangle.Hit(damage);
             Destroy(gameObject);
-            enemyManagement.enemyTriangleCount--;
             return;
         }
 
@@ -56,7 +55,6 @@ public class Bullet : MonoBehaviour
             AudioSource.PlayClipAtPoint(hitSound, new Vector3(0, 0, -5));
             enemyOctagonPurple.Hit(damage);
             Destroy(gameObject);
-            enemyManagement.enemyOctagonPurpleCount--;
             return;
         }
 
@@ -66,7 +64,6 @@ public class Bullet : MonoBehaviour
             AudioSource.PlayClipAtPoint(hitSound, new Vector3(0, 0, -5));
             enemyHeartPink.Hit(damage);
             Destroy(gameObject);
-            enemyManagement.enemyHeartPinkCount--;
             return;
         }
 
@@ -76,7 +73,6 @@ public class Bullet : MonoBehaviour
             AudioSource.PlayClipAtPoint(hitSound, new Vector3(0, 0, -5));
             enemyCircleMaroon.Hit(damage);
             Destroy(gameObject);
-            enemyManagement.enemyCircleMaroonCount--;
             return;
         }
     }

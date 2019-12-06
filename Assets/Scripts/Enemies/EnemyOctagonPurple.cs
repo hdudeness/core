@@ -28,6 +28,8 @@ public class EnemyOctagonPurple : MonoBehaviour
     private Vector2 center;
     private float angle;
 
+    public bool isNearbyHeartPink = false;
+
     IEnumerator EnemyFire()
     {
         while(true)
@@ -56,6 +58,14 @@ public class EnemyOctagonPurple : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isNearbyHeartPink)
+        {
+            if (health < (int)maxHealth)
+            {
+                health += 1;
+            }
+        }
+
         healthBar.size = new Vector2(5 * (health / maxHealth), healthBar.size.y);
         angle += rotateSpeed * Time.deltaTime;
         var offset = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * Radius;
@@ -75,6 +85,7 @@ public class EnemyOctagonPurple : MonoBehaviour
         if (health <= 0)
         {
             killEnemy();
+            enemyManagement.enemyOctagonPurpleCount--;
             score.scoreUpdate(pointValue);
         }
     }
@@ -89,4 +100,5 @@ public class EnemyOctagonPurple : MonoBehaviour
     {
         speed = speed * factor;
     }
+
 }

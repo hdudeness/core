@@ -50,6 +50,7 @@ public class EnemyHeartPink : MonoBehaviour
         if (health <= 0)
         {
             killEnemy();
+            enemyManagement.enemyHeartPinkCount--;
             score.scoreUpdate(pointValue);
         }
     }

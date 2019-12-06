@@ -20,6 +20,7 @@ public class EnemyCircleMaroon : MonoBehaviour
     public EnemyManagement enemyManagement;
     public AudioClip explosion;
     public float movementTime = 20;
+    public bool isNearbyHeartPink = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,14 @@ public class EnemyCircleMaroon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isNearbyHeartPink)
+        {
+            if (health < (int)maxHealth)
+            {
+                health += 1;
+            }
+        }
+
         healthBar.size = new Vector2(6 * (health / maxHealth), healthBar.size.y);
         timeSinceSpawn += Time.deltaTime;
         transform.position = Vector3.Lerp(startingPosition, endingPosition, timeSinceSpawn / travelTime);
@@ -53,6 +62,7 @@ public class EnemyCircleMaroon : MonoBehaviour
         if (health <= 0)
         {
             killEnemy();
+            enemyManagement.enemyCircleMaroonCount--;
             score.scoreUpdate(pointValue);
         }
     }
@@ -67,4 +77,5 @@ public class EnemyCircleMaroon : MonoBehaviour
     {
         speed = speed * factor;
     }
+
 }

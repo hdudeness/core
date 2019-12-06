@@ -20,6 +20,7 @@ public class EnemyTriangle : MonoBehaviour
     public GameManagement score;
     public EnemyManagement enemyManagement;
     public AudioClip explosion;
+    public bool isNearbyHeartPink = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,13 @@ public class EnemyTriangle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isNearbyHeartPink)
+        {
+            if(health < (int)maxHealth)
+            {
+                health += 1;
+            }
+        }
         healthBar.size = new Vector2(26 * (health / maxHealth), healthBar.size.y);
         timeSinceSpawn += Time.deltaTime;
         transform.position = Vector3.Lerp(startingPosition, endingPosition, timeSinceSpawn / travelTime);
@@ -52,6 +60,7 @@ public class EnemyTriangle : MonoBehaviour
         if(health <= 0)
         {
             killEnemyTriangle();
+            enemyManagement.enemyTriangleCount--;
             score.scoreUpdate(pointValue);
         }
     }

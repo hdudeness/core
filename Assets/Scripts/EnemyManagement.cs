@@ -23,7 +23,7 @@ public class EnemyManagement : MonoBehaviour
     public int enemyHeartPinkCount = 0;
     public int enemyHeartPinkLimit = 5;
     public int enemyCircleMaroonCount = 0;
-    public int enemyCircleMaroonLimit = 2;
+    public int enemyCircleMaroonLimit = 3;
 
     private System.Random rand = new System.Random();
 
@@ -155,7 +155,7 @@ public class EnemyManagement : MonoBehaviour
         {
             enemyTriangleLimit = 15;
             enemyOctagonPurpleLimit = 5;
-            enemyHeartPinkLimit = 3;
+            enemyHeartPinkLimit = 5;
             StartCoroutine(EnemyCircleMaroonProducer());
             isEnemyCircleMaroonSpawned = true;
         }
