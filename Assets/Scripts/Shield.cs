@@ -11,20 +11,43 @@ public class Shield : MonoBehaviour
     public EnemyManagement enemyManagement;
 
     public Transform bulletSpawnPoint;
-
     public Bullet bulletPrefab;
-    
+    public GameObject tripleShot;
+    public Transform bulletSpawnPoint2;
+    public Transform bulletSpawnPoint3;
+    private bool tripleShotFlag;
+    private float tripleShotTimer = 0;
+    public float tripleShotDuration;
+    private float angleOffSet = (float)22.5;
 
     // Start is called before the first frame update
     void Start()
     {
+        tripleShotFlag = false;
         enemyManagement = GameObject.Find("EnemyManagement").GetComponent<EnemyManagement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (tripleShotFlag)
+        {
+            tripleShot.GetComponent<SpriteRenderer>().enabled = true;
+        }
+        else
+        {
+            tripleShot.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
+        if (tripleShotFlag && tripleShotTimer < tripleShotDuration)
+        {
+            tripleShotTimer += Time.deltaTime;
+        }
+        else if (tripleShotFlag)
+        {
+            tripleShotFlag = false;
+            tripleShotTimer = 0;
+        }
     }
 
     public void RotateLeft()
@@ -97,9 +120,16 @@ public class Shield : MonoBehaviour
     public void FireBullet()
     {
         Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.Euler(0, 0, angle));
-        
+        if (tripleShotFlag)
+        {
+            Instantiate(bulletPrefab, bulletSpawnPoint2.position, Quaternion.Euler(0, 0, angle + angleOffSet));
+            Instantiate(bulletPrefab, bulletSpawnPoint3.position, Quaternion.Euler(0, 0, angle - angleOffSet));
+        }
     }
 
-    
+    public void ActivateTripleShot()
+    {
+        tripleShotFlag = true;
+    }
 
 }
