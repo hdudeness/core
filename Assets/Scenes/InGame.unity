@@ -1127,6 +1127,16 @@ MonoBehaviour:
   health: {fileID: 1930702848}
   nova: {fileID: 1938951998678678935, guid: 1427937cadc14a14e83dcd5d24048e4f, type: 3}
   wallItem: {fileID: 0}
+  mineItem: {fileID: 0}
+  s: []
+  I1: {fileID: 0}
+  I2: {fileID: 0}
+  I3: {fileID: 0}
+  I4: {fileID: 0}
+  slot1Amount: {fileID: 0}
+  slot2Amount: {fileID: 0}
+  slot3Amount: {fileID: 0}
+  slot4Amount: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,7 +1338,6 @@ MonoBehaviour:
   highestScore2: 0
   name3: 
   highestScore3: 0
-  items: 0000000000000000000000000000000000000000000000000000000000000000
   txtScore: {fileID: 2137769498}
   txtLevel: {fileID: 1593426748}
   timeDisplay: {fileID: 175560737}
@@ -2871,6 +2880,16 @@ MonoBehaviour:
   nova: {fileID: 1938951998678678935, guid: 1427937cadc14a14e83dcd5d24048e4f, type: 3}
   wallItem: {fileID: 3759384618845263968, guid: 517372f0d96993f409879deb2d147ed6,
     type: 3}
+  mineItem: {fileID: 0}
+  s: []
+  I1: {fileID: 0}
+  I2: {fileID: 0}
+  I3: {fileID: 0}
+  I4: {fileID: 0}
+  slot1Amount: {fileID: 0}
+  slot2Amount: {fileID: 0}
+  slot3Amount: {fileID: 0}
+  slot4Amount: {fileID: 0}
 --- !u!1 &1310065873
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,9 +10,10 @@ public class MineItem : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         // Spawn the explosion
-        //Instantiate();
+        Instantiate(MineExplosion, gameObject.transform.position, Quaternion.identity);
 
         // Despawn the mine
+        Destroy(gameObject);
     }
 
     // Start is called before the first frame update

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MineExplosion : MonoBehaviour
 {
-    // Explosion has a 0.2 second lifespan.
+    // Explosion lifespan.
     private double timeLimit = 0.2;
 
     /* When an enemy is caught in the explosion, deal 20 damage.
