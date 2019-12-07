@@ -9,6 +9,7 @@ public class Items : MonoBehaviour
     public HealthManagement health;
     public Supernova nova;
     public WallItem wallItem;
+    public MineItem mineItem;
 
     public Sprite[] s;
 
@@ -78,6 +79,9 @@ public class Items : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
+        // Instantiate s[]
+        s = new Sprite[4];
+        // Fill s[] with the correct sprites for the in game item bar
         I1.sprite = s[GameManagement.itemBar[0]];
         I2.sprite = s[GameManagement.itemBar[1]];
         I3.sprite = s[GameManagement.itemBar[2]];
