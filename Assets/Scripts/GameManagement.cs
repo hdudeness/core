@@ -9,6 +9,7 @@ public class GameManagement : MonoBehaviour
     public string playerName;
     public int level;
     public int score;
+    public static int money;
     public HealthManagement health;
     public string name1;
     public int highestScore1;
@@ -16,18 +17,17 @@ public class GameManagement : MonoBehaviour
     public int highestScore2;
     public string name3;
     public int highestScore3;
-    public int[] items = new int[8];
+    public static int[] items = new int[8];
+    public static int[] itemBar = { 0, 1, 2, 3 };
     public Text txtScore;
     public Text txtLevel;
-    //public Text nameText;
     public Text timeDisplay;
     public float timer;
     public float minutes;
     public float seconds;
     private int secondsBetweenLevels = 30;
-    //public static bool isLoaded = false;
-    // Start is called before the first frame update
 
+    // Start is called before the first frame update
     void Start()
     {
         if (MainMenu.isLoaded)
@@ -56,6 +56,7 @@ public class GameManagement : MonoBehaviour
     public void scoreUpdate(int points)
     {
         score += points;
+        money +=  points;//**
         if (txtScore != null)
         {
             txtScore.text = Convert.ToString(score);
@@ -76,6 +77,7 @@ public class GameManagement : MonoBehaviour
         playerName = data.playerName;
         //level = data.level;
         score = data.score;
+        money = data.money;
         timer = data.timer;
         health.coreHealth = data.health;
         name1 = data.name1;
@@ -85,6 +87,7 @@ public class GameManagement : MonoBehaviour
         name3 = data.name3;
         highestScore3 = data.highestScore3;
         Array.Copy(data.items, 0, items, 0, 8);
+        Array.Copy(data.itemBar, 0, itemBar, 0, 4);//**
         //nameText.text = playerName;
         txtScore.text = score.ToString();
     }

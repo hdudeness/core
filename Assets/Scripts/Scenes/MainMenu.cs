@@ -24,9 +24,10 @@ public class MainMenu : MonoBehaviour
 
     public void loadGame()
     {
-        PauseResume.isPaused = false;
+        /*PauseResume.isPaused = false;
         isLoaded = true;
-        SceneManager.LoadScene("InGame");
+        SceneManager.LoadScene("InGame");*/
+        SceneManager.LoadScene("Shop Screen");
     }
 
     public void settings()
