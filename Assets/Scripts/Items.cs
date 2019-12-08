@@ -6,6 +6,7 @@ public class Items : MonoBehaviour
 {
     public HealthManagement health;
     public Supernova nova;
+    public BladeOrbit bladeOrbit;
 
     public void healthRestore() {
         health.updateCoreHealth(-10);
@@ -21,6 +22,11 @@ public class Items : MonoBehaviour
         Supernova newNova = Instantiate(nova, new Vector3(0f, 0f, 0), Quaternion.identity);
     }
 
+
+    public void orbitalBlades()
+    {
+        BladeOrbit newBladeOrbit = Instantiate(bladeOrbit, new Vector3(5f, 5f, 0), Quaternion.identity);
+    }
     // Start is called before the first frame update
     void Start() {
         

@@ -1014,7 +1014,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 518159715}
-        m_MethodName: supernova
+        m_MethodName: orbitalBlades
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1074,6 +1074,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 1930702848}
   nova: {fileID: 1938951998678678935, guid: 1427937cadc14a14e83dcd5d24048e4f, type: 3}
+  bladeOrbit: {fileID: 3943417423034227517, guid: 8136d34e14c1bd24c8cb0e904acbf3d7,
+    type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
