@@ -1874,13 +1874,13 @@ MonoBehaviour:
   spawnTime: 2
   gameData: {fileID: 634199704}
   enemyTriangleCount: 0
-  enemyTriangleLimit: 30
+  enemyTriangleLimit: 12
   enemyOctagonPurpleCount: 0
-  enemyOctagonPurpleLimit: 20
+  enemyOctagonPurpleLimit: 0
   enemyHeartPinkCount: 0
-  enemyHeartPinkLimit: 15
+  enemyHeartPinkLimit: 0
   enemyCircleMaroonCount: 0
-  enemyCircleMaroonLimit: 10
+  enemyCircleMaroonLimit: 0
 --- !u!4 &853823221
 Transform:
   m_ObjectHideFlags: 0
@@ -2880,6 +2880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 1930702848}
   nova: {fileID: 1938951998678678935, guid: 1427937cadc14a14e83dcd5d24048e4f, type: 3}
+  bladeOrbit: {fileID: 0}
   wallItem: {fileID: 3759384618845263968, guid: 517372f0d96993f409879deb2d147ed6,
     type: 3}
   mineItem: {fileID: 0}
