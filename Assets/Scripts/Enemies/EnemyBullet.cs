@@ -11,6 +11,7 @@ public class EnemyBullet : MonoBehaviour
     private double distance;
     private float travelTime;
     float timeSinceSpawn = 0;
+    public int health;
 
     // Start is called before the first frame update
     void Start()
@@ -30,5 +31,14 @@ public class EnemyBullet : MonoBehaviour
     public void DestroyBullet()
     {
         Destroy(gameObject);
+    }
+
+    public void Hit(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            DestroyBullet();
+        }
     }
 }
