@@ -11,6 +11,7 @@ public class Items : MonoBehaviour
     public BladeOrbit bladeOrbit;
     public WallItem wallItem;
     public MineItem mineItem;
+    public ExtendedShield shield;
 
     public Sprite[] s;
 
@@ -50,13 +51,13 @@ public class Items : MonoBehaviour
     }
 
     public void extendedShield() {
-        print("ES");
+        ExtendedShield newExtendedShield = Instantiate(shield, GameObject.Find("Shield").transform.position, Quaternion.identity);
     }
 
     public void tripleShot() {
         print("TS");
     }
-
+    
     public void wall() {
         // Spawn an instance of the wall prefab.
         print("W");
