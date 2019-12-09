@@ -32,7 +32,7 @@ public class MainMenu : MonoBehaviour
 
     public void settings()
     {
-        SceneManager.LoadScene("SetScreen");
+        SceneManager.LoadScene("Settings");
     }
 
     public void quit()
