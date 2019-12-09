@@ -247,6 +247,7 @@ MonoBehaviour:
   turretDamage: 5
   laser: {fileID: 7688410465745881288}
   itemDuration: 30
+  fireSound: {fileID: 8300000, guid: ab0c3a9423e9dce42a3df5d5e3d089ee, type: 3}
 --- !u!1 &7688410465528201205
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class TurretItem : MonoBehaviour
     private float fireTimer;
     public GameObject laser;
     public int itemDuration;
+    public AudioClip fireSound;
 
     private GameObject FindClosestEnemy(float min, float max)
     {
@@ -58,6 +59,7 @@ public class TurretItem : MonoBehaviour
 
     IEnumerator DrawLine(Vector3 start, Vector3 end, Color color, float width, float duration)
     {
+        AudioSource.PlayClipAtPoint(fireSound, new Vector3(0, 0, -5));
         laser.GetComponent<LineRenderer>().enabled = true;
         laser.transform.position = start;
         LineRenderer lr = laser.GetComponent<LineRenderer>();
