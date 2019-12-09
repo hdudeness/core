@@ -6,10 +6,16 @@ public class ExtendedShield : MonoBehaviour
 {
     private Shield shield;
     private EnemyManagement enemyManagement;
+    private float timer = 0f;
+    private float timeLimit = 30f;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        //Debug.Log(transform.position.z);
+        transform.rotation = GameObject.Find("Shield").transform.rotation;
+        //Debug.Log(GameObject.Find("Shield").transform.position.z);
         shield = GameObject.Find("Shield").GetComponent<Shield>();
         enemyManagement = GameObject.Find("EnemyManagement").GetComponent<EnemyManagement>();
     }
@@ -17,6 +23,11 @@ public class ExtendedShield : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+        if (timer > timeLimit)
+        {
+            Destroy(gameObject);
+        }
         transform.rotation = Quaternion.Euler(0, 0, shield.angle);
     }
 

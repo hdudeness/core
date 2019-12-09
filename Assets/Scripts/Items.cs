@@ -66,6 +66,7 @@ public class Items : MonoBehaviour
 
     public void extendedShield() {
         ExtendedShield newExtendedShield = Instantiate(shield, GameObject.Find("Shield").transform.position, Quaternion.identity);
+
     }
 
     public void tripleShot() {
