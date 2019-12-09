@@ -99,7 +99,7 @@ public class ShopScene : MonoBehaviour {
     }
 
     public void incrementUp(int itemNumber) {
-        if (itemInfo[2, itemNumber] + itemInfo[1, itemNumber] <= GameManagement.money) {
+        if (itemInfo[2, itemNumber] + itemInfo[1, itemNumber] <= GameManagement.money && (itemInfo[0, itemNumber] + GameManagement.items[itemNumber]) < 100) {
             itemInfo[0, itemNumber]++;
             itemInfo[2, itemNumber] += itemInfo[1, itemNumber];
             updateText(itemNumber);
@@ -170,8 +170,8 @@ public class ShopScene : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
 
-        ///////////FOR TESTING ///////////////
-        GameManagement.money = 45356;
+        /////////// FOR TESTING ///////////////
+        GameManagement.money = 45000;
         moneyAvailable = GameObject.Find("MoneyAvailable").GetComponent<Text>();
         moneyAvailable.text = GameManagement.money.ToString();
 
@@ -216,6 +216,7 @@ public class ShopScene : MonoBehaviour {
                 itemInfo[i, j] = 0;
             }
         }
+
         itemInfo[1, 0] = 20;
         itemInfo[1, 1] = 30;
         itemInfo[1, 2] = 40;
