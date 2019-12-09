@@ -9,7 +9,7 @@ public class GameManagement : MonoBehaviour
     public string playerName;
     public int level;
     public int score;
-    public static int money;
+    public static int money = 1000;
     public HealthManagement health;
     public string name1;
     public int highestScore1;
@@ -26,6 +26,7 @@ public class GameManagement : MonoBehaviour
     public float minutes;
     public float seconds;
     private int secondsBetweenLevels = 30;
+    public static double volume = 0.5;
 
     // Start is called before the first frame update
     void Start()

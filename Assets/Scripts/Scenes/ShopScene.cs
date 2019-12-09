@@ -39,8 +39,7 @@ public class ShopScene : MonoBehaviour {
 
     public int[,] itemInfo = new int[3, 8];
 
-    public Sprite[] s1;//***
-    //Sprite[0] = "HealthButton";
+    public Sprite[] s1;
     
     public Image I1;
     public Image I2;
@@ -170,8 +169,7 @@ public class ShopScene : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
 
-        /////////// FOR TESTING ///////////////
-        GameManagement.money = 45000;
+        //GameManagement.money = 1000;
         moneyAvailable = GameObject.Find("MoneyAvailable").GetComponent<Text>();
         moneyAvailable.text = GameManagement.money.ToString();
 

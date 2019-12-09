@@ -12,6 +12,7 @@ public class Items : MonoBehaviour
     public WallItem wallItem;
     public MineItem mineItem;
     public ExtendedShield shield;
+    public TurretItem turretItem;
 
     public Sprite[] s1;
 
@@ -24,6 +25,19 @@ public class Items : MonoBehaviour
     public Text slot2Amount;
     public Text slot3Amount;
     public Text slot4Amount;
+
+    Vector2 GetPointOnCircle(float angle)
+    {
+        Vector2 origin = new Vector2(0, 0);
+        float radius = 3;
+        float angleInRadians = -1 * angle * Mathf.Deg2Rad;
+
+        var x = origin.x + radius * Mathf.Sin(angleInRadians);
+        var y = origin.y + radius * Mathf.Cos(angleInRadians);
+
+        return new Vector2(x, y);
+
+    }
 
     public void useItem(int slot) {
         int item = GameManagement.itemBar[slot];
@@ -70,12 +84,12 @@ public class Items : MonoBehaviour
     }
 
     public void tripleShot() {
-        print("TS");
+        Shield.ActivateTripleShot();
     }
     
     public void wall() {
-        // Spawn an instance of the wall prefab.
-        print("W");
+        Vector2 pos = GetPointOnCircle(Shield.angle);
+        Instantiate(wallItem, pos, Quaternion.Euler(0.0f, 0.0f, Shield.angle + 90.0f));
     }
     
     public void supernova() {
@@ -89,11 +103,13 @@ public class Items : MonoBehaviour
     }
 	
     public void mine() {
-        print("M");
+        Vector2 pos = GetPointOnCircle(Shield.angle);
+        Instantiate(mineItem, pos, Quaternion.identity);
     }
 
     public void turret() {
-        print("T");
+        Vector2 pos = GetPointOnCircle(Shield.angle);
+        Instantiate(turretItem, pos, Quaternion.identity);
     }
 
 

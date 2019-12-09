@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 7688410465332677495}
   - component: {fileID: 7688410465332677488}
   m_Layer: 0
-  m_Name: Turret Base
+  m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,6 +246,8 @@ MonoBehaviour:
   lineDuration: 0.1
   turretDamage: 5
   laser: {fileID: 7688410465745881288}
+  itemDuration: 30
+  fireSound: {fileID: 8300000, guid: ab0c3a9423e9dce42a3df5d5e3d089ee, type: 3}
 --- !u!1 &7688410465528201205
 GameObject:
   m_ObjectHideFlags: 0
