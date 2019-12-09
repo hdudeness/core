@@ -170,8 +170,7 @@ public class ShopScene : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
 
-        /////////// FOR TESTING ///////////////
-        GameManagement.money = 45000;
+        GameManagement.money = 1000;
         moneyAvailable = GameObject.Find("MoneyAvailable").GetComponent<Text>();
         moneyAvailable.text = GameManagement.money.ToString();
 

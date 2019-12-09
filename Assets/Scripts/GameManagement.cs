@@ -26,6 +26,7 @@ public class GameManagement : MonoBehaviour
     public float minutes;
     public float seconds;
     private int secondsBetweenLevels = 30;
+    public static double volume = 0.5;
 
     // Start is called before the first frame update
     void Start()
