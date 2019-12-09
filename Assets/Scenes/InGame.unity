@@ -758,8 +758,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d68d3eed5fa5c4e46b1f27cd4845baae, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1072,8 +1072,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f3c3a6bdea794e0419ddef91c1c31db2, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1848,13 +1848,13 @@ MonoBehaviour:
   spawnTime: 2
   gameData: {fileID: 634199704}
   enemyTriangleCount: 0
-  enemyTriangleLimit: 30
+  enemyTriangleLimit: 12
   enemyOctagonPurpleCount: 0
-  enemyOctagonPurpleLimit: 20
+  enemyOctagonPurpleLimit: 0
   enemyHeartPinkCount: 0
-  enemyHeartPinkLimit: 15
+  enemyHeartPinkLimit: 0
   enemyCircleMaroonCount: 0
-  enemyCircleMaroonLimit: 10
+  enemyCircleMaroonLimit: 0
 --- !u!4 &853823221
 Transform:
   m_ObjectHideFlags: 0
@@ -2798,8 +2798,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 372e299bd504fc846a235222e394871c, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3727,8 +3727,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9c53810849af4f64c85e4f46ca744084, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

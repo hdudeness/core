@@ -29,6 +29,7 @@ public class EnemyOctagonPurple : MonoBehaviour
     private float angle;
 
     public bool isNearbyHeartPink = false;
+    private double healingCooldown = 0.5;
 
     IEnumerator EnemyFire()
     {
@@ -58,11 +59,16 @@ public class EnemyOctagonPurple : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healingCooldown -= Time.deltaTime;
         if (isNearbyHeartPink)
         {
-            if (health < (int)maxHealth)
+            if (healingCooldown <= 0)
             {
-                health += 1;
+                if (health < (int)maxHealth)
+                {
+                    health += 4;
+                    healingCooldown = 0.5;
+                }
             }
         }
 

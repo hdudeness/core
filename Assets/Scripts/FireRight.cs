@@ -19,7 +19,7 @@ public class FireRight : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         if (isPressed)
         {
-            if (timeSinceLastShot > 0 && timeSinceLastShot < 0.4)
+            if (timeSinceLastShot > 0 && timeSinceLastShot < 0.2)
             {
             timeSinceLastShot += Time.deltaTime;
             }

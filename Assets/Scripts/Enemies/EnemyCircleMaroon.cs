@@ -21,6 +21,7 @@ public class EnemyCircleMaroon : MonoBehaviour
     public AudioClip explosion;
     public float movementTime = 20;
     public bool isNearbyHeartPink = false;
+    private double healingCooldown = 0.5;
 
     // Start is called before the first frame update
     void Start()
@@ -36,11 +37,16 @@ public class EnemyCircleMaroon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healingCooldown -= Time.deltaTime;
         if (isNearbyHeartPink)
         {
-            if (health < (int)maxHealth)
+            if (healingCooldown <= 0)
             {
-                health += 1;
+                if (health < (int)maxHealth)
+                {
+                    health += 4;
+                    healingCooldown = 0.5;
+                }
             }
         }
 
