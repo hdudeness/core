@@ -1139,6 +1139,7 @@ MonoBehaviour:
     type: 3}
   wallItem: {fileID: 0}
   mineItem: {fileID: 0}
+  shield: {fileID: 613274163340361335, guid: 7175d430074a00749b826364176fb928, type: 3}
   s1: []
   I1: {fileID: 0}
   I2: {fileID: 0}
@@ -3623,7 +3624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coreHealth: 100
   txtHealth: {fileID: 484335963}
-  godMode: 0
+  godMode: 1
   gameManagement: {fileID: 634199704}
 --- !u!4 &1930702849
 Transform:
