@@ -9,7 +9,7 @@ public class GameManagement : MonoBehaviour
     public string playerName;
     public int level;
     public int score;
-    public static int money;
+    public static int money = 1000;
     public HealthManagement health;
     public string name1;
     public int highestScore1;
