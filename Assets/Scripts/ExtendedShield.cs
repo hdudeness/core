@@ -28,7 +28,7 @@ public class ExtendedShield : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        transform.rotation = Quaternion.Euler(0, 0, shield.angle);
+        transform.rotation = Quaternion.Euler(0, 0, Shield.angle);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

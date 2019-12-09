@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
 
     IEnumerator DestroyAfterTime()
     {
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSeconds(5);
 
         Destroy(gameObject);
     }

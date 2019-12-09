@@ -1137,8 +1137,13 @@ MonoBehaviour:
   nova: {fileID: 1938951998678678935, guid: 1427937cadc14a14e83dcd5d24048e4f, type: 3}
   bladeOrbit: {fileID: 3943417423034227517, guid: 8136d34e14c1bd24c8cb0e904acbf3d7,
     type: 3}
-  wallItem: {fileID: 0}
-  mineItem: {fileID: 0}
+  wallItem: {fileID: 3759384618845263968, guid: 517372f0d96993f409879deb2d147ed6,
+    type: 3}
+  mineItem: {fileID: 4556060992710977236, guid: 99d6c05327fee7849bba1ba72342f414,
+    type: 3}
+  shield: {fileID: 613274163340361335, guid: 7175d430074a00749b826364176fb928, type: 3}
+  turretItem: {fileID: 7688410465332677488, guid: 138c7ea90e409e34d9891b21c4bc8441,
+    type: 3}
   s1: []
   I1: {fileID: 0}
   I2: {fileID: 0}
@@ -2921,7 +2926,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameData: {fileID: 634199704}
-  angle: 0
   angleChange: 2
   enemyManagement: {fileID: 0}
   bulletSpawnPoint: {fileID: 1895680205}

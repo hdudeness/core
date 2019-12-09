@@ -9,11 +9,14 @@ public class MineItem : MonoBehaviour
     // When enemy enters activation radius
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        // Spawn the explosion
-        Instantiate(MineExplosion, gameObject.transform.position, Quaternion.identity);
+        if (collision.gameObject.tag == "Enemy")
+        {
+            // Spawn the explosion
+            Instantiate(MineExplosion, gameObject.transform.position, Quaternion.identity);
 
-        // Despawn the mine
-        Destroy(gameObject);
+            // Despawn the mine
+            Destroy(gameObject);
+        }
     }
 
     // Start is called before the first frame update

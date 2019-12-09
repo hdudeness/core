@@ -6,7 +6,7 @@ using UnityEngine;
 public class Shield : MonoBehaviour
 {
     public GameManagement gameData;
-    public float angle;
+    public static float angle;
     public float angleChange;
     public EnemyManagement enemyManagement;
 
@@ -15,7 +15,7 @@ public class Shield : MonoBehaviour
     public GameObject tripleShot;
     public Transform bulletSpawnPoint2;
     public Transform bulletSpawnPoint3;
-    private bool tripleShotFlag;
+    private static bool tripleShotFlag;
     private float tripleShotTimer = 0;
     public float tripleShotDuration;
     private float angleOffSet = (float)22.5;
@@ -127,7 +127,7 @@ public class Shield : MonoBehaviour
         }
     }
 
-    public void ActivateTripleShot()
+    public static void ActivateTripleShot()
     {
         tripleShotFlag = true;
     }

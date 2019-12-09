@@ -15,6 +15,7 @@ public class TurretItem : MonoBehaviour
     private float max;
     private float fireTimer;
     public GameObject laser;
+    public int itemDuration;
 
     private GameObject FindClosestEnemy(float min, float max)
     {
@@ -68,13 +69,20 @@ public class TurretItem : MonoBehaviour
         laser.GetComponent<LineRenderer>().enabled = false;
     }
 
+    IEnumerator Destroy()
+    {
+        yield return new WaitForSeconds(itemDuration);
+
+        Destroy(gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         min = 0;
         max = CalculateRangeMax();
         fireTimer = fireRate;
-        //StartCoroutine(TurretShoot());
+        StartCoroutine(Destroy());
     }
 
     // Update is called once per frame
